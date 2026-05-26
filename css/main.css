@@ -1,0 +1,88 @@
+html body {
+  margin: 0;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+  width: 100%;
+  max-width: 1080px;
+  /* background-color: red; */
+}
+
+/* A222 */
+h1 {
+  margin-bottom: 30px;
+}
+
+/* Skills */
+li b {
+  margin-right: 10px;
+}
+
+/* projects */
+ul {
+  list-style: none;
+}
+ul li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  background-color: #f7f7f7;
+  margin: 2px;
+  border-radius: 20px;
+}
+section.top ul li {
+  padding: 25px;
+}
+ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #1a1a1a;
+  width: 100%;
+  padding: 25px;
+  text-align: left;
+  /* background-color: red; */
+}
+ul li a .image {
+  position: absolute;
+  top: 0px;
+  right: -10px;
+  object-fit: cover;
+  width: 70px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #fff;
+}
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  background-color: #333;
+  color: #eee;
+  width: 100%;
+  font-size: 20px;
+  padding: 20px 0;
+  gap: 5px;
+}
+
+footer a {
+  color: #eee;
+  margin-left: 20px;
+}
+footer a:hover {
+  color: var(--main-color);
+}
