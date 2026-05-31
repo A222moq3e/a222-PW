@@ -149,31 +149,60 @@
       <div class="container">
         <h2>Projects</h2>
         <div class="projects">
-          <a href="https://moqraraty.com/" target="_blank" rel="noreferrer">
+          <article class="project-card">
             <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://moqraraty.com/" alt="">
             <span>Moqraraty</span>
             <small>Education platform, 30,000+ users</small>
-          </a>
-          <a href="https://github.com/A222moq3e/STEMREF" target="_blank" rel="noreferrer">
+            <div class="project-actions">
+              <a href="https://moqraraty.com/" target="_blank" rel="noreferrer">moqraraty.com</a>
+              <button type="button" data-preview="https://moqraraty.com/" data-title="Moqraraty">Preview</button>
+            </div>
+          </article>
+          <article class="project-card secondary">
             <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://github.com/A222moq3e/STEMREF" alt="">
             <span>STEMREF</span>
             <small>Open-source project</small>
-          </a>
-          <a href="https://lagpsy.vercel.app/" target="_blank" rel="noreferrer">
+            <div class="project-actions">
+              <a href="https://github.com/A222moq3e/STEMREF" target="_blank" rel="noreferrer">github.com/A222moq3e/STEMREF</a>
+              <button type="button" data-preview="https://github.com/A222moq3e/STEMREF" data-title="STEMREF">Preview</button>
+            </div>
+          </article>
+          <article class="project-card secondary">
             <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://lagpsy.vercel.app/" alt="">
             <span>Lagpsy</span>
             <small>Web application</small>
-          </a>
-          <a href="https://sh3bh.com/" target="_blank" rel="noreferrer">
+            <div class="project-actions">
+              <a href="https://lagpsy.vercel.app/" target="_blank" rel="noreferrer">lagpsy.vercel.app</a>
+              <button type="button" data-preview="https://lagpsy.vercel.app/" data-title="Lagpsy">Preview</button>
+            </div>
+          </article>
+          <article class="project-card">
             <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://sh3bh.com/" alt="">
             <span>Sh3bh | شعبة</span>
             <small>Class/group management project</small>
-          </a>
-          <a href="https://ejad.sh3bh.com/" target="_blank" rel="noreferrer">
+            <div class="project-actions">
+              <a href="https://sh3bh.com/" target="_blank" rel="noreferrer">sh3bh.com</a>
+              <button type="button" data-preview="https://sh3bh.com/" data-title="Sh3bh">Preview</button>
+            </div>
+          </article>
+          <article class="project-card">
             <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://ejad.sh3bh.com/" alt="">
             <span>Ejad Sh3bh | إيجاد شعبة</span>
             <small>Volunteer full-stack contribution</small>
-          </a>
+            <div class="project-actions">
+              <a href="https://ejad.sh3bh.com/" target="_blank" rel="noreferrer">ejad.sh3bh.com</a>
+              <button type="button" data-preview="https://ejad.sh3bh.com/" data-title="Ejad Sh3bh">Preview</button>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://neyam.sa/" alt="">
+            <span>Neyam</span>
+            <small>Salla and Shopify theme work, plus data warehouse collaboration</small>
+            <div class="project-actions">
+              <a href="https://neyam.sa/" target="_blank" rel="noreferrer">neyam.sa</a>
+              <button type="button" data-preview="https://neyam.sa/" data-title="Neyam">Preview</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -219,6 +248,73 @@
     <a href="https://github.com/A222moq3e" target="_blank" rel="noreferrer" title="Github @A222moq3e"><i class="fa-brands fa-github"></i></a>
     <a href="mailto:moq3e2000@gmail.com" title="Email Abdullah"><i class="fa-regular fa-envelope"></i></a>
   </footer>
+
+  <div class="preview-modal" id="preview-modal" aria-hidden="true">
+    <div class="preview-dialog" role="dialog" aria-modal="true" aria-labelledby="preview-title">
+      <div class="preview-toolbar">
+        <h3 id="preview-title">Project Preview</h3>
+        <button type="button" class="preview-close" aria-label="Close preview">&times;</button>
+      </div>
+      <div class="preview-frame-wrap">
+        <iframe title="Project website preview" width="1440" height="900"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const desktopPreviewWidth = 1440;
+    const modal = document.getElementById("preview-modal");
+    const modalFrameWrap = modal.querySelector(".preview-frame-wrap");
+    const modalFrame = modal.querySelector("iframe");
+    const modalTitle = document.getElementById("preview-title");
+    const closePreview = modal.querySelector(".preview-close");
+
+    function fitPreview() {
+      modalFrameWrap.style.setProperty("--preview-scale", modalFrameWrap.clientWidth / desktopPreviewWidth);
+    }
+
+    function openPreview(button) {
+      modalTitle.textContent = `${button.dataset.title} Preview`;
+      modalFrame.src = button.dataset.preview;
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      fitPreview();
+      closePreview.focus();
+    }
+
+    function hidePreview() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      modalFrame.removeAttribute("src");
+    }
+
+    document.querySelectorAll("[data-preview]").forEach((button) => {
+      button.addEventListener("click", () => {
+        openPreview(button);
+      });
+    });
+
+    closePreview.addEventListener("click", hidePreview);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        hidePreview();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        hidePreview();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (modal.classList.contains("is-open")) {
+        fitPreview();
+      }
+    });
+  </script>
   <script src="js/all.min.js"></script>
 </body>
 </html>
