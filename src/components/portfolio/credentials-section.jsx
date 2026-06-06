@@ -19,6 +19,7 @@ export function CredentialsSection({ dictionary }) {
               <Card key={certification.title}>
                 <CardHeader>
                   <CardTitle>{certification.title}</CardTitle>
+                  <p className="text-sm font-medium text-primary">{certification.provider}</p>
                   <CardDescription>{certification.description}</CardDescription>
                   <Button asChild variant="outline" size="sm" className="mt-3 w-fit">
                     <a href={certification.url} target="_blank" rel="noreferrer">
