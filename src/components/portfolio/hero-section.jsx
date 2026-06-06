@@ -1,0 +1,70 @@
+import { Code2, Globe, Mail, MapPin, Phone, ShieldCheck, Sparkles } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+export function HeroSection({ dictionary }) {
+  return (
+    <section className="px-4 py-16 md:py-24">
+      <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[1.4fr_0.6fr]">
+        <div className="flex flex-col justify-center">
+          <Badge variant="outline" className="mb-4 w-fit bg-card">
+            <Sparkles className="me-1 h-3.5 w-3.5" />
+            {dictionary.hero.eyebrow}
+          </Badge>
+          <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-normal text-foreground md:text-7xl">
+            {dictionary.hero.name}
+          </h1>
+          <p className="mt-4 text-xl font-bold text-primary" lang="ar" dir="rtl">
+            {dictionary.hero.arabicName}
+          </p>
+          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{dictionary.hero.summary}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button asChild>
+              <a href="#projects">{dictionary.hero.primaryAction}</a>
+            </Button>
+            <Button asChild variant="outline">
+              <a href="mailto:moq3e2000@gmail.com">{dictionary.hero.secondaryAction}</a>
+            </Button>
+          </div>
+        </div>
+
+        <Card className="h-fit">
+          <CardHeader>
+            <CardTitle>{dictionary.sections.info}</CardTitle>
+            <CardDescription>{dictionary.contact.location}</CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-3">
+            {[
+              [Mail, dictionary.contact.email, "mailto:moq3e2000@gmail.com"],
+              [Phone, dictionary.contact.phone, "tel:+966507485316"],
+              [MapPin, dictionary.contact.location],
+              [Globe, dictionary.contact.website, "https://a222ghoul.com"],
+              [Code2, dictionary.contact.github, "https://github.com/A222moq3e"],
+              [ShieldCheck, dictionary.contact.cyberhub, "https://cyberhub.sa/profile/a222_a222"],
+            ].map(([Icon, label, href]) =>
+              href ? (
+                <a
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer" : undefined}
+                  className="flex min-w-0 items-center gap-3 text-sm text-muted-foreground transition hover:text-primary"
+                  key={label}
+                >
+                  <Icon className="h-4 w-4 shrink-0 text-secondary" />
+                  <span className="truncate">{label}</span>
+                </a>
+              ) : (
+                <span className="flex min-w-0 items-center gap-3 text-sm text-muted-foreground" key={label}>
+                  <Icon className="h-4 w-4 shrink-0 text-secondary" />
+                  <span>{label}</span>
+                </span>
+              )
+            )}
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+}
