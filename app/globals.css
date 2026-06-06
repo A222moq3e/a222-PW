@@ -78,3 +78,9 @@ a {
 iframe {
   color-scheme: light;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
