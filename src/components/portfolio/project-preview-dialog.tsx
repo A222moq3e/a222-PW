@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Shows an on-demand desktop iframe preview for project sites.
+ */
+
 import { useEffect, useRef, useState } from "react";
 import { ExternalLink } from "lucide-react";
 

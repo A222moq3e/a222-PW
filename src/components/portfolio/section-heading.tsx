@@ -1,3 +1,6 @@
+/**
+ * Shared section title component with an icon marker.
+ */
 export function SectionHeading({ eyebrow, title, icon: Icon }) {
   return (
     <div className="mb-5 flex items-center gap-3">

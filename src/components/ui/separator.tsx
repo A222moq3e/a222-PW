@@ -1,3 +1,6 @@
+/**
+ * Reusable shadcn-style separator primitive.
+ */
 "use client"
 
 import * as React from "react"

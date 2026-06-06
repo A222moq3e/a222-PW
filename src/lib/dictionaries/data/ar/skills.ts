@@ -1,3 +1,6 @@
+/**
+ * Arabic skills section content for the portfolio dictionary.
+ */
 import type { Dictionary } from "../../types";
 
 export const skills: Dictionary["skills"] = [

@@ -1,3 +1,6 @@
+/**
+ * Public dictionary exports and localized project composition helpers.
+ */
 import { ar } from "./ar";
 import { en } from "./en";
 import { sharedProjects } from "./projects";

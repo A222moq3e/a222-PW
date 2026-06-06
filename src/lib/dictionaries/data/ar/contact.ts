@@ -1,3 +1,6 @@
+/**
+ * Arabic contact section content for the portfolio dictionary.
+ */
 import type { Dictionary } from "../../types";
 
 export const contact: Dictionary["contact"] = {

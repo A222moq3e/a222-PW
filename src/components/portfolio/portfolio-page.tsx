@@ -1,3 +1,6 @@
+/**
+ * Composes all portfolio sections into the localized page.
+ */
 import { CredentialsSection } from "@/components/portfolio/credentials-section";
 import { EducationLanguagesSection } from "@/components/portfolio/education-languages-section";
 import { ExperienceSection } from "@/components/portfolio/experience-section";

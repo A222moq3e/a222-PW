@@ -1,3 +1,6 @@
+/**
+ * Arabic sections section content for the portfolio dictionary.
+ */
 import type { Dictionary } from "../../types";
 
 export const sections: Dictionary["sections"] = {

@@ -1,3 +1,6 @@
+/**
+ * Renders the hero introduction and contact information card.
+ */
 import { Code2, Globe, Mail, MapPin, Phone, ShieldCheck, Sparkles } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";

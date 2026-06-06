@@ -1,3 +1,6 @@
+/**
+ * Handles locale-aware redirects before requests reach the app router.
+ */
 import { NextResponse } from "next/server";
 
 import { defaultLocale, locales } from "@/lib/i18n";

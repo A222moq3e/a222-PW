@@ -1,3 +1,6 @@
+/**
+ * Arabic projects section content for the portfolio dictionary.
+ */
 import type { Dictionary } from "../../types";
 
 export const projectText: Dictionary["projectText"] = {

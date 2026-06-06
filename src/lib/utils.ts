@@ -1,3 +1,6 @@
+/**
+ * Shared utility helpers for class name composition.
+ */
 import { clsx } from "clsx";
 import type { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";

@@ -1,3 +1,6 @@
+/**
+ * Shared project URLs, labels, and preview metadata.
+ */
 import type { SharedProject } from "./types";
 
 export const sharedProjects: SharedProject[] = [

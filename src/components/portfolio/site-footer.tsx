@@ -1,3 +1,6 @@
+/**
+ * Renders the portfolio footer and copyright line.
+ */
 import { Code2, Mail } from "lucide-react";
 
 export function SiteFooter() {

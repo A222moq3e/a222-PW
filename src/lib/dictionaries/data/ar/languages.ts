@@ -1,3 +1,6 @@
+/**
+ * Arabic languages section content for the portfolio dictionary.
+ */
 import type { Dictionary } from "../../types";
 
 export const languages: Dictionary["languages"] = [

@@ -1,3 +1,6 @@
+/**
+ * Arabic experience section content for the portfolio dictionary.
+ */
 import type { Dictionary } from "../../types";
 
 export const experience: Dictionary["experience"] = [

@@ -1,3 +1,6 @@
+/**
+ * Renders portfolio project cards and project actions.
+ */
 import { Globe } from "lucide-react";
 
 import { ProjectPreviewDialog } from "@/components/portfolio/project-preview-dialog";

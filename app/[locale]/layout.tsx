@@ -1,3 +1,6 @@
+/**
+ * Applies locale direction and metadata for localized pages.
+ */
 import { notFound } from "next/navigation";
 
 import { dictionaries } from "@/lib/dictionaries";

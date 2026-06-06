@@ -1,3 +1,6 @@
+/**
+ * Renders the sticky portfolio header and language switcher.
+ */
 import Link from "next/link";
 
 import { LocaleSwitcher } from "@/components/portfolio/locale-switcher";

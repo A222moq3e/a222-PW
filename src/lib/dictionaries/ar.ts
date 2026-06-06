@@ -1,3 +1,6 @@
+/**
+ * Assembles the Arabic dictionary from section data files.
+ */
 import { achievements, certificationAction, certifications } from "./data/ar/credentials";
 import { contact } from "./data/ar/contact";
 import { education } from "./data/ar/education";

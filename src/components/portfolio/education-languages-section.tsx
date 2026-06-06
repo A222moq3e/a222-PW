@@ -1,3 +1,6 @@
+/**
+ * Renders education history and language proficiency.
+ */
 import { GraduationCap } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

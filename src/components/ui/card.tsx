@@ -1,3 +1,6 @@
+/**
+ * Reusable shadcn-style card primitives.
+ */
 import * as React from "react"
 
 import { cn } from "@/lib/utils"

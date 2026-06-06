@@ -1,3 +1,6 @@
+/**
+ * Renders certifications and achievement highlights.
+ */
 import { Award, Sparkles } from "lucide-react";
 
 import { SectionHeading } from "@/components/portfolio/section-heading";

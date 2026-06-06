@@ -1,3 +1,6 @@
+/**
+ * Renders grouped technical and soft skills.
+ */
 import { Wrench } from "lucide-react";
 
 import { SectionHeading } from "@/components/portfolio/section-heading";

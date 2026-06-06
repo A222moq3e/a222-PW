@@ -1,3 +1,6 @@
+/**
+ * Reusable shadcn-style dialog primitives powered by Radix.
+ */
 "use client"
 
 import * as React from "react"

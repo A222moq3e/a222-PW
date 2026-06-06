@@ -1,3 +1,6 @@
+/**
+ * Provides the language switch action for the current page.
+ */
 import Link from "next/link";
 import { Languages } from "lucide-react";
 

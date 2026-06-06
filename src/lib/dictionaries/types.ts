@@ -1,3 +1,6 @@
+/**
+ * Shared TypeScript types for locales, dictionaries, and projects.
+ */
 import type { LucideIcon } from "lucide-react";
 
 export type Locale = "en" | "ar";

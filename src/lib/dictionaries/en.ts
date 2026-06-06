@@ -1,3 +1,6 @@
+/**
+ * Assembles the English dictionary from section data files.
+ */
 import { achievements, certificationAction, certifications } from "./data/en/credentials";
 import { contact } from "./data/en/contact";
 import { education } from "./data/en/education";

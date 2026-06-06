@@ -1,3 +1,6 @@
+/**
+ * Renders the localized portfolio page from the selected dictionary.
+ */
 import { notFound } from "next/navigation";
 
 import { PortfolioPage } from "@/components/portfolio/portfolio-page";

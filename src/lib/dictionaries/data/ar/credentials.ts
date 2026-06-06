@@ -1,3 +1,6 @@
+/**
+ * Arabic credentials section content for the portfolio dictionary.
+ */
 import type { Dictionary } from "../../types";
 
 export const certificationAction: Dictionary["certificationAction"] = "تحقق من الشهادة";

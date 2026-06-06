@@ -1,3 +1,6 @@
+/**
+ * Arabic hero section content for the portfolio dictionary.
+ */
 import type { Dictionary } from "../../types";
 
 export const hero: Dictionary["hero"] = {

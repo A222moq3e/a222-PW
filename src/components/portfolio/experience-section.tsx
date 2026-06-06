@@ -1,3 +1,6 @@
+/**
+ * Renders professional and volunteer experience entries.
+ */
 import { BriefcaseBusiness } from "lucide-react";
 
 import { SectionHeading } from "@/components/portfolio/section-heading";

@@ -1,3 +1,6 @@
+/**
+ * Locale constants and direction helpers.
+ */
 import type { Direction, Locale } from "@/lib/dictionaries";
 
 export const locales = ["en", "ar"] as const;
