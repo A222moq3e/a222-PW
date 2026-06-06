@@ -24,7 +24,7 @@ export function HeroSection({ dictionary }) {
           </p>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{dictionary.hero.summary}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild className="text-white hover:text-white">
+            <Button asChild className="!text-white hover:!text-white">
               <a href="#projects">{dictionary.hero.primaryAction}</a>
             </Button>
             <Button asChild variant="outline">

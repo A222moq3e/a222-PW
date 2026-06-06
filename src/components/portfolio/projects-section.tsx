@@ -44,13 +44,7 @@ export function ProjectsSection({ dictionary }) {
                 {!project.disabledExternal && (
                   <>
                     {(project.links ?? [{ kind: "open", url: project.url }]).map((link) => (
-                      <Button
-                        asChild
-                        variant="ghost"
-                        size="sm"
-                        className="text-white hover:text-white"
-                        key={`${project.id}-${link.kind}`}
-                      >
+                      <Button asChild variant="ghost" size="sm" key={`${project.id}-${link.kind}`}>
                         <a href={link.url} target="_blank" rel="noreferrer">
                           {dictionary.projectText[link.kind] ?? dictionary.projectText.open}
                         </a>
