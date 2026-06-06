@@ -1,0 +1,6 @@
+import type { Dictionary } from "../../types";
+
+export const nav: Dictionary["nav"] = {
+  localeLabel: "العربية",
+  localeHref: "/ar",
+};

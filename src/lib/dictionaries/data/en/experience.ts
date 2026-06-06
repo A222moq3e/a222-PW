@@ -1,0 +1,54 @@
+import type { Dictionary } from "../../types";
+
+export const experience: Dictionary["experience"] = [
+  {
+    title: "Software Engineer",
+    company: "SITE",
+    period: "2025 - Present",
+    items: ["..."],
+  },
+  {
+    title: "Backend Developer & Security Tester",
+    company: "Moqraraty | Riyadh (Remote/Hybrid)",
+    period: "2024 - Present",
+    items: [
+      "Built and maintained backend services with validation, authorization, and secure data-flow practices.",
+      "Performed targeted web/API penetration testing and identified misconfigurations and input validation gaps.",
+      "Improved deployment reliability and hardening across Docker, Nginx, logs, and metrics.",
+      "Supported a growing education platform serving more than 30,000 users.",
+    ],
+  },
+  {
+    title: "Vulnerability Researcher",
+    company: "Bugbounty.sa",
+    period: "2024 - Present",
+    items: [
+      "Researches and reports web security vulnerabilities through responsible disclosure workflows.",
+      "Applies practical testing methodology across common web and API attack surfaces.",
+    ],
+  },
+  {
+    title: "Volunteer Security Researcher",
+    company: "Information Security Club (infosecclub) | University Community",
+    period: "2024 - Present",
+    items: [
+      "Conducted vulnerability research, knowledge sharing, and CTF challenge development.",
+      "Participated with CCISinfosecclub in research writing and building web CTF challenges.",
+    ],
+  },
+  {
+    title: "Part-Time Developer",
+    company: "Qubes | Riyadh (Remote/Hybrid)",
+    period: "2024 - 2025",
+    items: [
+      "Contributed to Neyam Salla Theme and Shopify theme development for e-commerce.",
+      "Collaborated on the Neyam Data Warehouse initiative.",
+    ],
+  },
+  {
+    title: "Volunteer Full-Stack Developer",
+    company: "Ejad Club | University",
+    period: "2024 - 2025",
+    items: ["Helped build Ejad Sh3bh, a class and group management website, as a full-stack contributor."],
+  },
+];

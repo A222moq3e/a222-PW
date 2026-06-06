@@ -40,7 +40,7 @@ export function ProjectPreviewDialog({ project, labels }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="sm" className="text-white hover:text-white">
           {labels.preview}
         </Button>
       </DialogTrigger>
@@ -62,7 +62,7 @@ export function ProjectPreviewDialog({ project, labels }) {
           )}
         </div>
         <div className="flex justify-end border-t border-border p-4">
-          <Button asChild>
+          <Button asChild className="text-white hover:text-white">
             <a href={project.url} target="_blank" rel="noreferrer">
               <ExternalLink className="h-4 w-4" />
               {labels.open}

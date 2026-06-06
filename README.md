@@ -5,6 +5,7 @@ Professional bilingual portfolio for Abdullah bin Ammar, built with Next.js App 
 ## Stack
 
 - Next.js App Router
+- TypeScript
 - React
 - Tailwind CSS
 - shadcn-style UI primitives
@@ -66,15 +67,22 @@ http://127.0.0.1:3100/en
 app/
   [locale]/        Localized routes and metadata
   globals.css      Tailwind CSS, theme tokens, base styles
-  layout.jsx       Root shell
+  layout.tsx       Root shell
 src/
   components/
     portfolio/     Page sections and project preview modal
     ui/            shadcn-style primitives
   lib/
-    dictionaries.js  English and Arabic content
-    i18n.js          Locale helpers
-    utils.js         cn() class helper
+    dictionaries/    Split locale content, shared project data, and data types
+      ar.ts          Assembles Arabic section data
+      en.ts          Assembles English section data
+      data/          Per-locale section data files
+        ar/          Arabic files for hero, contact, experience, projects, and more
+        en/          English files for hero, contact, experience, projects, and more
+      projects.ts    Shared project URLs and preview metadata
+      types.ts       Dictionary and project types
+    i18n.ts          Locale helpers
+    utils.ts         cn() class helper
 public/
   imgs/            Static image assets
 Dockerfile         Production Docker image
@@ -85,4 +93,4 @@ components.json    shadcn configuration
 
 - Project previews load inside a modal iframe only after clicking the preview button.
 - Some external sites may block iframe embedding with security headers; every project card still has a direct link.
-- Content is centralized in `src/lib/dictionaries.js` for English and Arabic updates.
+- Content is split under `src/lib/dictionaries/data/` so every section can be edited in its own locale-specific file.
