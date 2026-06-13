@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function HeroSection({ dictionary }) {
   return (
-    <section className="px-4 py-16 md:py-24">
+    <section className="px-4 py-16 md:py-24" data-nav-title={dictionary.hero.name}>
       <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[1.4fr_0.6fr]">
         <ScrollReveal className="flex flex-col justify-center" direction="left">
           <Badge variant="outline" className="mb-4 w-fit bg-card">

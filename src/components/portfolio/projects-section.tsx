@@ -42,7 +42,7 @@ export function ProjectsSection({ dictionary }) {
   const projects = getProjects(dictionary);
 
   return (
-    <section id="projects" className="px-4 py-10">
+    <section id="projects" className="px-4 py-10" data-nav-title={dictionary.sections.projects}>
       <div className="mx-auto w-full max-w-6xl">
         <SectionHeading eyebrow={dictionary.sections.projects} title={dictionary.sections.projects} icon={Globe} />
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

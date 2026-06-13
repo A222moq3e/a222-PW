@@ -9,7 +9,10 @@ import { Separator } from "@/components/ui/separator";
 
 export function EducationLanguagesSection({ dictionary }) {
   return (
-    <section className="px-4 py-10 pb-16">
+    <section
+      className="px-4 py-10 pb-16"
+      data-nav-title={`${dictionary.sections.education} & ${dictionary.sections.languages}`}
+    >
       <div className="mx-auto grid w-full max-w-6xl gap-6 lg:grid-cols-2">
         <ScrollReveal direction="left">
           <Card className="h-full">
