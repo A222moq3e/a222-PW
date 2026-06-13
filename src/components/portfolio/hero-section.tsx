@@ -1,12 +1,14 @@
 /**
  * Renders the hero introduction and contact information card.
  */
-import { Code2, Globe, Mail, MapPin, Phone, ShieldCheck, Sparkles } from "lucide-react";
+import { Globe, Mail, Phone, ShieldCheck, Sparkles } from "lucide-react";
 
+import { GithubIcon } from "@/components/icons/github-icon";
+import { AnimatedName } from "@/components/portfolio/animated-name";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function HeroSection({ dictionary }) {
   return (
@@ -17,12 +19,12 @@ export function HeroSection({ dictionary }) {
             <Sparkles className="me-1 h-3.5 w-3.5" />
             {dictionary.hero.eyebrow}
           </Badge>
-          <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-normal text-foreground md:text-7xl">
-            {dictionary.hero.name}
-          </h1>
-          <p className="mt-4 text-xl font-bold text-primary" lang="ar" dir="rtl">
-            {dictionary.hero.arabicName}
-          </p>
+          <AnimatedName name={dictionary.hero.name} />
+          {dictionary.hero.arabicName && (
+            <p className="mt-4 text-xl font-bold text-primary" lang="ar" dir="rtl">
+              {dictionary.hero.arabicName}
+            </p>
+          )}
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{dictionary.hero.summary}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild className="!text-white hover:!text-white">
@@ -38,15 +40,13 @@ export function HeroSection({ dictionary }) {
           <Card className="h-fit">
             <CardHeader>
               <CardTitle>{dictionary.sections.info}</CardTitle>
-              <CardDescription>{dictionary.contact.location}</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-3">
               {[
                 [Mail, dictionary.contact.email, "mailto:moq3e2000@gmail.com"],
                 [Phone, dictionary.contact.phone, "tel:+966507485316"],
-                [MapPin, dictionary.contact.location],
                 [Globe, dictionary.contact.website, "https://a222ghoul.com"],
-                [Code2, dictionary.contact.github, "https://github.com/A222moq3e"],
+                [GithubIcon, dictionary.contact.github, "https://github.com/A222moq3e"],
                 [ShieldCheck, dictionary.contact.cyberhub, "https://cyberhub.sa/profile/a222_a222"],
               ].map(([Icon, label, href]) =>
                 href ? (

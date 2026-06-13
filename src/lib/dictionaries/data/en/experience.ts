@@ -8,7 +8,7 @@ export const experience: Dictionary["experience"] = [
     title: "Software Engineer",
     company: "SITE",
     period: "2025 - Present",
-    items: ["..."],
+    items: ["writing..."],
   },
   {
     title: "Backend Developer & Security Tester",

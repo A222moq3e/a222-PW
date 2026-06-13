@@ -12,6 +12,32 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { getProjects } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
 
+function ProjectLogo({ project }) {
+  const initials = project.title
+    .split(/\s+/)
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  if (project.logo) {
+    return (
+      <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card p-1.5 shadow-sm">
+        <img src={project.logo} alt={`${project.title} logo`} className="max-h-full max-w-full object-contain" />
+      </span>
+    );
+  }
+
+  return (
+    <span
+      aria-label={`${project.title} logo placeholder`}
+      className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-muted text-xs font-bold text-primary shadow-sm"
+    >
+      {initials}
+    </span>
+  );
+}
+
 export function ProjectsSection({ dictionary }) {
   const projects = getProjects(dictionary);
 
@@ -27,15 +53,7 @@ export function ProjectsSection({ dictionary }) {
               >
                 <CardHeader>
                   <div className="mb-3 flex items-center justify-between gap-3">
-                    <img
-                      src={
-                        project.disabledExternal
-                          ? "/imgs/logo.png"
-                          : `https://s2.googleusercontent.com/s2/favicons?domain_url=${project.url}`
-                      }
-                      alt=""
-                      className="h-8 w-8 rounded-md border border-border bg-card p-1"
-                    />
+                    <ProjectLogo project={project} />
                     <Badge variant={project.secondary ? "outline" : "secondary"}>{project.label}</Badge>
                   </div>
                   <CardTitle>{project.title}</CardTitle>
@@ -59,6 +77,13 @@ export function ProjectsSection({ dictionary }) {
             </ScrollReveal>
           ))}
         </div>
+        <ScrollReveal className="mt-6 flex justify-center" direction="up">
+          <Button asChild variant="outline" className="bg-white hover:bg-slate-100">
+            <a href="https://github.com/A222moq3e" target="_blank" rel="noreferrer" className="!text-slate-950 hover:!text-slate-950">
+              {dictionary.projectText.seeMore}
+            </a>
+          </Button>
+        </ScrollReveal>
       </div>
     </section>
   );

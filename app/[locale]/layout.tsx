@@ -42,7 +42,7 @@ export default async function LocaleLayout({ children, params }) {
   }
 
   return (
-    <div lang={locale} dir={getDirection(locale)}>
+    <div lang={locale} dir={getDirection(locale)} className={locale === "ar" ? "font-arabic" : undefined}>
       {children}
     </div>
   );

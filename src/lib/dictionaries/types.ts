@@ -12,6 +12,7 @@ export type SharedProject = {
   id: ProjectId;
   url: string;
   label: string;
+  logo?: string;
   links?: Array<{
     kind: ProjectLinkKind;
     url: string;
@@ -51,12 +52,12 @@ export type Dictionary = {
   hero: {
     eyebrow: string;
     name: string;
-    arabicName: string;
+    arabicName?: string;
     summary: string;
     primaryAction: string;
     secondaryAction: string;
   };
-  contact: Record<"email" | "phone" | "location" | "website" | "linkedin" | "github" | "cyberhub", string>;
+  contact: Record<"email" | "phone" | "website" | "linkedin" | "github" | "cyberhub", string>;
   sections: Record<
     "info" | "experience" | "credentials" | "achievements" | "projects" | "skills" | "education" | "languages",
     string
@@ -66,7 +67,7 @@ export type Dictionary = {
   certifications: Certification[];
   achievements: Array<[string, string]>;
   projectText: Record<ProjectId, [string, string]> &
-    Record<"preview" | "open" | "website" | "github" | "modalDescription", string>;
+    Record<"preview" | "open" | "website" | "github" | "seeMore" | "modalDescription", string>;
   skills: Array<[string, string]>;
   education: Array<[string, string, string]>;
   languages: Array<[string, string]>;

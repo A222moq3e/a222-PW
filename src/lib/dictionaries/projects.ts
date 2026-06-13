@@ -8,27 +8,32 @@ export const sharedProjects: SharedProject[] = [
     id: "sh3bh",
     url: "https://sh3bh.com/",
     label: "sh3bh.com",
+    logo: "/imgs/sh3bh_logo.png",
   },
   {
     id: "ejad",
     url: "https://ejad.sh3bh.com/",
     label: "ejad.sh3bh.com",
+    logo: "/imgs/Ejad_Club.jpg",
   },
   {
     id: "moqraraty",
     url: "https://moqraraty.com/",
     label: "moqraraty.com",
+    logo: "/imgs/Moqraraty_logo.png",
   },
   {
     id: "neyam",
     url: "#",
     label: "Neyam Website",
+    logo: "/imgs/Neyam_Qubes_logo.jpg",
     disabledExternal: true,
   },
   {
     id: "stemref",
     url: "https://stemref.askardesign.com/",
     label: "stemref.askardesign.com",
+    logo: "/imgs/STEMREF_logo.svg",
     links: [
       {
         kind: "website",

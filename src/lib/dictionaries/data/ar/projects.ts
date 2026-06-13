@@ -8,6 +8,7 @@ export const projectText: Dictionary["projectText"] = {
   open: "فتح الموقع",
   website: "الموقع",
   github: "GitHub",
+  seeMore: "عرض المزيد",
   modalDescription: "معاينة مباشرة للموقع. بعض المواقع الخارجية قد تمنع التضمين داخل iframe.",
   sh3bh: ["Sh3bh", "منصة لإدارة الشعب والمجموعات"],
   ejad: ["Ejad Sh3bh", "مساهمة Full-Stack تطوعية لنادي إيجاد"],
