@@ -40,7 +40,7 @@ export const experience: Dictionary["experience"] = [
     ],
   },
   {
-    title: "مطور بدوام جزئي",
+    title: "مهندس برمجيات",
     company: "Qubes | الرياض (عن بعد/هجين)",
     period: "2024 - 2025",
     items: [

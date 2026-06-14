@@ -11,9 +11,13 @@ export const projectText: Dictionary["projectText"] = {
   seeMore: "See more",
   modalDescription: "Live website preview. Some external sites may block iframe embedding.",
   sh3bh: ["Sh3bh", "Class and group management platform"],
-  ejad: ["Ejad Sh3bh", "Volunteer full-stack contribution for Ejad Club"],
-  moqraraty: ["Moqraraty", "Education platform serving 30,000+ users"],
+  ejad: ["Ejad Sh3bh", "Class and group management platform for Ejad Club"],
+  moqraraty: ["Moqraraty", "App that supports and simplifies the student journey"],
   neyam: ["Neyam", "Salla and Shopify theme work, plus data warehouse collaboration"],
-  stemref: ["STEMREF", "Open-source project"],
-  lagpsy: ["Lagpsy", "Web application"],
+  edualizer: ["Edualizer", "Create videos using code with AI"],
+  stemref: ["STEMREF", "Educational platform for university students"],
+  lagpsy: [
+    "Lagpsy",
+    "Psychological initiative from Imam Muhammad ibn Saud Islamic University that connects mental health concepts with gaming culture",
+  ],
 };

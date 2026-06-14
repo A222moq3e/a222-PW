@@ -40,7 +40,7 @@ export const experience: Dictionary["experience"] = [
     ],
   },
   {
-    title: "Part-Time Developer",
+    title: "Software Engineer",
     company: "Qubes | Riyadh (Remote/Hybrid)",
     period: "2024 - 2025",
     items: [

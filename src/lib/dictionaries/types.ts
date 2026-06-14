@@ -6,7 +6,7 @@ import type { LucideIcon } from "lucide-react";
 export type Locale = "en" | "ar";
 export type Direction = "ltr" | "rtl";
 export type ProjectLinkKind = "open" | "website" | "github";
-export type ProjectId = "sh3bh" | "ejad" | "moqraraty" | "neyam" | "stemref" | "lagpsy";
+export type ProjectId = "sh3bh" | "ejad" | "moqraraty" | "neyam" | "edualizer" | "stemref" | "lagpsy";
 
 export type SharedProject = {
   id: ProjectId;
