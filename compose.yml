@@ -1,0 +1,15 @@
+services:
+  persona-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: persona-website:latest
+    container_name: persona-website
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      PORT: "3000"
+      HOSTNAME: 0.0.0.0
+    ports:
+      - "3100:3000"
+    restart: unless-stopped
