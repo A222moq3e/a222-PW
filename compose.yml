@@ -11,5 +11,5 @@ services:
       PORT: "3000"
       HOSTNAME: 0.0.0.0
     ports:
-      - "3100:3000"
+      - "31222:3000"
     restart: unless-stopped
