@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection({ dictionary }) {
   return (
-    <section className="px-4 py-16 md:py-24" data-nav-title={dictionary.hero.name}>
+    <section id="hero" className="scroll-mt-20 px-4 py-16 md:py-24" data-nav-id="hero">
       <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[1.4fr_0.6fr]">
         <ScrollReveal className="flex flex-col justify-center" direction="left">
           <Badge variant="outline" className="mb-4 w-fit bg-card">

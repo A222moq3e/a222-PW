@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function ExperienceSection({ dictionary }) {
   return (
-    <section className="px-4 py-10" data-nav-title={dictionary.sections.experience}>
+    <section id="experience" className="scroll-mt-20 px-4 py-10" data-nav-id="experience">
       <div className="mx-auto w-full max-w-6xl">
         <SectionHeading
           eyebrow={dictionary.sections.experience}

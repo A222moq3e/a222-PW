@@ -11,8 +11,9 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 export function CredentialsSection({ dictionary }) {
   return (
     <section
-      className="px-4 py-10"
-      data-nav-title={`${dictionary.sections.credentials} & ${dictionary.sections.achievements}`}
+      id="credentials"
+      className="scroll-mt-20 px-4 py-10"
+      data-nav-id="credentials"
     >
       <div className="mx-auto grid w-full max-w-6xl gap-6 lg:grid-cols-2">
         <div>
