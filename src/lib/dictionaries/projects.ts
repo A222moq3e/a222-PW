@@ -11,6 +11,18 @@ export const sharedProjects: SharedProject[] = [
     logo: "/imgs/Moqraraty_logo.png",
   },
   {
+    id: "ejad",
+    url: "https://ejad.sh3bh.com/",
+    label: "ejad.sh3bh.com",
+    logo: "/imgs/Ejad_Sh3bh_logo.svg",
+  },
+  {
+    id: "sh3bh",
+    url: "https://sh3bh.com/",
+    label: "sh3bh.com",
+    logo: "/imgs/sh3bh_logo.png",
+  },
+  {
     id: "neyam",
     url: "#",
     label: "Neyam Website",
@@ -22,18 +34,6 @@ export const sharedProjects: SharedProject[] = [
     url: "https://edualizer.video/",
     label: "edualizer.video",
     logo: "/imgs/Edualizer.svg",
-  },
-  {
-    id: "sh3bh",
-    url: "https://sh3bh.com/",
-    label: "sh3bh.com",
-    logo: "/imgs/sh3bh_logo.png",
-  },
-  {
-    id: "ejad",
-    url: "https://ejad.sh3bh.com/",
-    label: "ejad.sh3bh.com",
-    logo: "/imgs/Ejad_Sh3bh_logo.svg",
   },
   {
     id: "stemref",

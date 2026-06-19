@@ -13,11 +13,8 @@ export const projectText: Dictionary["projectText"] = {
   sh3bh: ["Sh3bh", "Class and group management platform"],
   ejad: ["Ejad Sh3bh", "Class and group management platform for Ejad Club"],
   moqraraty: ["Moqraraty", "App that supports and simplifies the student journey"],
-  neyam: ["Neyam", "Salla and Shopify theme work, plus data warehouse collaboration"],
-  edualizer: ["Edualizer", "Create videos using code with AI"],
+  neyam: ["Neyam", "Salla Theme Shopping Website for Neyam products"],
+  edualizer: ["Edualizer", "Platform to create videos using code with AI"],
   stemref: ["STEMREF", "Educational platform for university students"],
-  lagpsy: [
-    "Lagpsy",
-    "Psychological initiative from Imam Muhammad ibn Saud Islamic University that connects mental health concepts with gaming culture",
-  ],
+  lagpsy: ["Lagpsy", "Mental health and gaming awareness initiative"],
 };

@@ -7,6 +7,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Globe, Mail, Phone, ShieldCheck } from "lucide-react";
 
 import { GithubIcon } from "@/components/icons/github-icon";
+import { LinkedinIcon } from "@/components/icons/linkedin-icon";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function DraggableInfoCard({ dictionary }) {
@@ -34,6 +35,7 @@ export function DraggableInfoCard({ dictionary }) {
             [Mail, dictionary.contact.email, "mailto:moq3e2000@gmail.com"],
             [Phone, dictionary.contact.phone, "tel:+966507485316"],
             [Globe, dictionary.contact.website, "https://a222ghoul.com"],
+            [LinkedinIcon, dictionary.contact.linkedin, "https://linkedin.com/in/a222web"],
             [GithubIcon, dictionary.contact.github, "https://github.com/A222moq3e"],
             [ShieldCheck, dictionary.contact.cyberhub, "https://cyberhub.sa/profile/a222_a222"],
           ].map(([Icon, label, href]) => (
