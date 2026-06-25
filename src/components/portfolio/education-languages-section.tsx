@@ -29,7 +29,7 @@ export function EducationLanguagesSection({ dictionary }) {
                   {index > 0 && <Separator className="mb-4" />}
                   <div className="flex flex-wrap justify-between gap-2">
                     <strong>{school}</strong>
-                    <span className="text-sm text-muted-foreground">{period}</span>
+                    {period && <span className="text-sm text-muted-foreground">{period}</span>}
                   </div>
                   <p className="text-sm text-muted-foreground">{detail}</p>
                 </div>

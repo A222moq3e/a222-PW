@@ -27,7 +27,7 @@ export const experience: Dictionary["experience"] = [
     ],
   },
   {
-    title: "Vulnerability Researcher",
+    title: "Security Researcher",
     company: "Bugbounty.sa",
     period: "2024 - Present",
     items: [
