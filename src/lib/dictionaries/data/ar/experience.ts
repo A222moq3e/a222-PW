@@ -8,6 +8,7 @@ export const experience: Dictionary["experience"] = [
     title: "مهندس برمجيات",
     company: "SITE",
     period: "2026 - الآن",
+    technologies: ["الأمن السيبراني", "تطوير Backend", "معمارية المنصات"],
     items: [
       "تصميم وتطوير منصة تمارين وتقييمات أمن سيبراني لـ HCD لتقديم التمارين والمحاكاة والتقييمات.",
       "بناء مزايا لإدارة التمارين وتفاعل المشاركين وسير عمل التقييمات وتتبع الأداء.",
@@ -19,6 +20,7 @@ export const experience: Dictionary["experience"] = [
     title: "مطور Backend ومختبر أمني",
     company: "مقرراتي | الرياض (عن بعد/هجين)",
     period: "2024 - الآن",
+    technologies: ["Docker", "Nginx", "أمن API", "اختبار الاختراق"],
     items: [
       "بناء وصيانة خدمات Backend مع التحقق من المدخلات والصلاحيات وتدفق بيانات آمن.",
       "تنفيذ اختبارات اختراق مركزة لتطبيقات الويب وواجهات API واكتشاف أخطاء الإعداد والتحقق.",
@@ -30,6 +32,7 @@ export const experience: Dictionary["experience"] = [
     title: "باحث ثغرات",
     company: "Bugbounty.sa",
     period: "2024 - الآن",
+    technologies: ["أمن الويب", "أمن API", "الإفصاح المسؤول"],
     items: [
       "البحث عن ثغرات أمنية في الويب ورفع التقارير عبر مسارات الإفصاح المسؤول.",
       "تطبيق منهجية اختبار عملية على أسطح هجوم الويب وواجهات API الشائعة.",
@@ -39,6 +42,7 @@ export const experience: Dictionary["experience"] = [
     title: "باحث أمني متطوع",
     company: "نادي أمن المعلومات | مجتمع جامعي",
     period: "2024 - 2026",
+    technologies: ["أبحاث الثغرات", "CTF", "الكتابة البحثية"],
     items: [
       "المشاركة في أبحاث الثغرات ونقل المعرفة وبناء تحديات CTF.",
       "المساهمة مع CCISinfosecclub في الكتابة البحثية وبناء تحديات ويب CTF.",
@@ -48,6 +52,7 @@ export const experience: Dictionary["experience"] = [
     title: "مهندس برمجيات",
     company: "Qubes | الرياض (عن بعد/هجين)",
     period: "2024 - 2025",
+    technologies: ["سلة", "Shopify", "مستودعات البيانات"],
     items: [
       "المساهمة في تطوير ثيم Neyam على سلة وثيمات Shopify للتجارة الإلكترونية.",
       "المشاركة في مبادرة Neyam Data Warehouse.",
@@ -57,6 +62,7 @@ export const experience: Dictionary["experience"] = [
     title: "مطور Full-Stack متطوع",
     company: "نادي إيجاد | الجامعة",
     period: "2024 - 2025",
+    technologies: ["تطوير Full-Stack", "تطوير الويب"],
     items: ["المساهمة في بناء Ejad Sh3bh، موقع لإدارة الشعب والمجموعات، كمطور Full-Stack."],
   },
 ];

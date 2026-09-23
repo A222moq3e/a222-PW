@@ -31,6 +31,7 @@ export type Experience = {
   company: string;
   period: string;
   items: string[];
+  technologies: string[];
 };
 
 export type Certification = {

@@ -2,6 +2,7 @@
  * Global Tailwind layers, theme tokens, and base page styling.
  */
 @import "tailwindcss";
+@source "../src";
 
 :root {
   --background: #08111f;

@@ -8,6 +8,7 @@ export const experience: Dictionary["experience"] = [
     title: "Software Engineer",
     company: "SITE",
     period: "2026 - Present",
+    technologies: ["Cybersecurity", "Backend Development", "Platform Architecture"],
     items: [
       "Designed and developed a cybersecurity exercise and assessment platform for HCD to deliver cyber exercises, simulations, and assessments.",
       "Built features for exercise management, participant engagement, assessment workflows, and performance tracking.",
@@ -19,6 +20,7 @@ export const experience: Dictionary["experience"] = [
     title: "Backend Developer & Security Tester",
     company: "Moqraraty | Riyadh (Remote/Hybrid)",
     period: "2024 - Present",
+    technologies: ["Docker", "Nginx", "API Security", "Penetration Testing"],
     items: [
       "Built and maintained backend services with validation, authorization, and secure data-flow practices.",
       "Performed targeted web/API penetration testing and identified misconfigurations and input validation gaps.",
@@ -30,6 +32,7 @@ export const experience: Dictionary["experience"] = [
     title: "Security Researcher",
     company: "Bugbounty.sa",
     period: "2024 - Present",
+    technologies: ["Web Security", "API Security", "Responsible Disclosure"],
     items: [
       "Researches and reports web security vulnerabilities through responsible disclosure workflows.",
       "Applies practical testing methodology across common web and API attack surfaces.",
@@ -39,6 +42,7 @@ export const experience: Dictionary["experience"] = [
     title: "Volunteer Security Researcher",
     company: "Information Security Club (infosecclub) | University Community",
     period: "2024 - 2026",
+    technologies: ["Vulnerability Research", "CTF", "Research Writing"],
     items: [
       "Conducted vulnerability research, knowledge sharing, and CTF challenge development.",
       "Participated with CCISinfosecclub in research writing and building web CTF challenges.",
@@ -48,6 +52,7 @@ export const experience: Dictionary["experience"] = [
     title: "Software Engineer",
     company: "Qubes | Riyadh (Remote/Hybrid)",
     period: "2024 - 2025",
+    technologies: ["Salla", "Shopify", "Data Warehouse"],
     items: [
       "Contributed to the development of the Neyam Salla Theme and the Shopify theme for e-commerce.",
       "Collaborated on the Neyam Data Warehouse initiative.",
@@ -57,6 +62,7 @@ export const experience: Dictionary["experience"] = [
     title: "Volunteer Full-Stack Developer",
     company: "Ejad Club | University",
     period: "2024 - 2025",
+    technologies: ["Full-Stack Development", "Web Development"],
     items: ["Helped build Ejad Sh3bh, a class and group management website, as a full-stack contributor."],
   },
 ];

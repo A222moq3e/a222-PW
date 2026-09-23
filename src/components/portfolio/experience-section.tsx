@@ -1,14 +1,13 @@
 /**
- * Renders professional and volunteer experience entries.
+ * Renders localized professional and volunteer experience as a timeline.
  */
 import { BriefcaseBusiness } from "lucide-react";
 
-import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { SectionHeading } from "@/components/portfolio/section-heading";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Timeline from "@/components/ui/timeline-02";
+import type { Dictionary } from "@/lib/dictionaries/types";
 
-export function ExperienceSection({ dictionary }) {
+export function ExperienceSection({ dictionary }: { dictionary: Dictionary }) {
   return (
     <section id="experience" className="scroll-mt-20 px-4 py-10" data-nav-id="experience">
       <div className="mx-auto w-full max-w-6xl">
@@ -17,30 +16,7 @@ export function ExperienceSection({ dictionary }) {
           title={dictionary.sections.experience}
           icon={BriefcaseBusiness}
         />
-        <div className="grid gap-4">
-          {dictionary.experience.map((job, index) => (
-            <ScrollReveal key={`${job.title}-${job.period}`} delay={index * 70} direction="up">
-              <Card>
-                <CardHeader className="md:flex-row md:items-start md:justify-between md:space-y-0">
-                  <div>
-                    <CardTitle>{job.title}</CardTitle>
-                    <CardDescription>{job.company}</CardDescription>
-                  </div>
-                  <Badge variant="secondary">{job.period}</Badge>
-                </CardHeader>
-                <CardContent>
-                  <ul className="grid gap-2 ps-5 text-sm text-muted-foreground">
-                    {job.items.map((item) => (
-                      <li className="list-disc" key={item}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          ))}
-        </div>
+        <Timeline experiences={dictionary.experience} />
       </div>
     </section>
   );
