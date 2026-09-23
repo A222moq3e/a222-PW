@@ -29,6 +29,7 @@ export type LocalizedProject = SharedProject & {
 export type Experience = {
   title: string;
   company: string;
+  logo?: string;
   period: string;
   items: string[];
   technologies: string[];

@@ -7,6 +7,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "Software Engineer",
     company: "SITE",
+    logo: "/imgs/site/SITE_logo.jpg",
     period: "2026 - Present",
     technologies: ["Cybersecurity", "Platform Architecture", "Training", "Exercises", "Full Stack Development", "DevOps", "AI"],
     items: [
@@ -19,6 +20,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "Backend Developer & Security Tester",
     company: "Moqraraty | Riyadh (Remote/Hybrid)",
+    logo: "/imgs/moqraraty/Moqraraty_logo.png",
     period: "2024 - Present",
     technologies: ["Docker", "Nginx", "API Security", "Penetration Testing", "Express.js", "PostgreSQL", "SQLite"],
     items: [
@@ -31,6 +33,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "Security Researcher",
     company: "Bugbounty.sa",
+    logo: "/imgs/bugbountysa/BugBoutySa_logo.jpg",
     period: "2024 - 2025",
     technologies: ["Web Security", "API Security", "Responsible Disclosure"],
     items: [
@@ -41,6 +44,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "Volunteer Security Researcher",
     company: "Information Security Club (infosecclub) | University Community",
+    logo: "/imgs/infosecclub/infosecclub.jpg",
     period: "2024 - 2026",
     technologies: ["Vulnerability Research", "CTF", "Research Writing"],
     items: [
@@ -61,6 +65,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "Volunteer Full-Stack Developer",
     company: "Ejad Club | University",
+    logo: "/imgs/ejad/Ejad_Club.jpg",
     period: "2024 - 2025",
     technologies: ["Full-Stack Development", "Web Development"],
     items: ["Helped build Ejad Sh3bh, a class and group management website, as a full-stack contributor."],

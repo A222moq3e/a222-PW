@@ -7,6 +7,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "مهندس برمجيات",
     company: "SITE",
+    logo: "/imgs/site/SITE_logo.jpg",
     period: "2026 - الآن",
     technologies: ["الأمن السيبراني", "معمارية المنصات", "التدريب", "التمارين", "تطوير Full Stack", "DevOps", "AI"],
     items: [
@@ -19,6 +20,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "مطور Backend ومختبر أمني",
     company: "مقرراتي | الرياض (عن بعد/هجين)",
+    logo: "/imgs/moqraraty/Moqraraty_logo.png",
     period: "2024 - الآن",
     technologies: ["Docker", "Nginx", "أمن API", "اختبار الاختراق", "Express.js", "PostgreSQL", "SQLite"],
     items: [
@@ -31,6 +33,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "باحث ثغرات",
     company: "Bugbounty.sa",
+    logo: "/imgs/bugbountysa/BugBoutySa_logo.jpg",
     period: "2024 - 2025",
     technologies: ["أمن الويب", "أمن API", "الإفصاح المسؤول"],
     items: [
@@ -41,6 +44,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "باحث أمني متطوع",
     company: "نادي أمن المعلومات | مجتمع جامعي",
+    logo: "/imgs/infosecclub/infosecclub.jpg",
     period: "2024 - 2026",
     technologies: ["أبحاث الثغرات", "CTF", "الكتابة البحثية"],
     items: [
@@ -61,6 +65,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "مطور Full-Stack متطوع",
     company: "نادي إيجاد | الجامعة",
+    logo: "/imgs/ejad/Ejad_Club.jpg",
     period: "2024 - 2025",
     technologies: ["تطوير Full-Stack", "تطوير الويب"],
     items: ["المساهمة في بناء Ejad Sh3bh، موقع لإدارة الشعب والمجموعات، كمطور Full-Stack."],
