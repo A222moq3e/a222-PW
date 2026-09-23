@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
     title: dictionary.meta.title,
     description: dictionary.meta.description,
     icons: {
-      icon: "/imgs/sword_chieldV2.jpg",
+      icon: "/imgs/personal-logo/sword_chieldV2.jpg",
     },
     alternates: {
       languages: {

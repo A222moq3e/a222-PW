@@ -8,38 +8,38 @@ export const sharedProjects: SharedProject[] = [
     id: "moqraraty",
     url: "https://moqraraty.com/",
     label: "moqraraty.com",
-    logo: "/imgs/Moqraraty_logo.png",
+    logo: "/imgs/moqraraty/Moqraraty_logo.png",
   },
   {
     id: "ejad",
     url: "https://ejad.sh3bh.com/",
     label: "ejad.sh3bh.com",
-    logo: "/imgs/Ejad_Sh3bh_logo.svg",
+    logo: "/imgs/ejad/Ejad_Sh3bh_logo.svg",
   },
   {
     id: "sh3bh",
     url: "https://sh3bh.com/",
     label: "sh3bh.com",
-    logo: "/imgs/sh3bh_logo.png",
+    logo: "/imgs/sh3bh/sh3bh_logo.png",
   },
   {
     id: "neyam",
     url: "#",
     label: "Neyam Website",
-    logo: "/imgs/Neyam_Qubes_logo.jpg",
+    logo: "/imgs/neyam/Neyam_Qubes_logo.jpg",
     disabledExternal: true,
   },
   {
     id: "edualizer",
     url: "https://edualizer.video/",
     label: "edualizer.video",
-    logo: "/imgs/Edualizer.svg",
+    logo: "/imgs/edualizer/Edualizer.svg",
   },
   {
     id: "stemref",
     url: "https://stemref.askardesign.com/",
     label: "stemref.askardesign.com",
-    logo: "/imgs/STEMREF_logo.svg",
+    logo: "/imgs/stemref/STEMREF_logo.svg",
     links: [
       {
         kind: "website",
@@ -56,7 +56,7 @@ export const sharedProjects: SharedProject[] = [
     id: "lagpsy",
     url: "https://lagpsy.vercel.app/",
     label: "lagpsy.vercel.app",
-    logo: "/imgs/lagpsy_logo.svg",
+    logo: "/imgs/lagpsy/lagpsy_logo.svg",
     links: [
       {
         kind: "website",

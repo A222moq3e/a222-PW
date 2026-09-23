@@ -84,7 +84,7 @@ src/
     i18n.ts          Locale helpers
     utils.ts         cn() class helper
 public/
-  imgs/            Static image assets
+  imgs/            Images grouped by project, organization, and personal logo
 Dockerfile         Production Docker image
 components.json    shadcn configuration
 ```
