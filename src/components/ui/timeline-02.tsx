@@ -1,6 +1,8 @@
 import { BriefcaseBusiness, Building2, Calendar, type LucideIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
+import { TimelineEnd, TimelineIcon, TimelineLine } from "@/components/ui/timeline-decoration";
+import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { cn } from "@/lib/utils";
 
 export type TimelineExperience = {
@@ -24,12 +26,13 @@ export default function Timeline({
   return (
     <div className={cn("w-full", className)}>
       <ol className="relative ms-5">
-        {experiences.map(({ company, logo, description, period, technologies, title, items, icon: Icon = BriefcaseBusiness }) => (
-          <li className="relative pb-12 ps-10 last:pb-0" key={`${company}-${title}-${period}`}>
-            <div aria-hidden="true" className="absolute inset-y-0 start-0 border-s-2 border-border" />
-            <div className="absolute start-px top-0 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full bg-background rtl:translate-x-1/2">
+        {experiences.map(({ company, logo, description, period, technologies, title, items, icon: Icon = BriefcaseBusiness }, index) => (
+          <li className="relative pb-12" key={`${company}-${title}-${period}`}>
+            <TimelineLine delay={index * 70} />
+            <TimelineIcon delay={index * 70}>
               <Icon aria-hidden="true" className="h-5 w-5" />
-            </div>
+            </TimelineIcon>
+            <ScrollReveal className="relative ps-10" direction="up" delay={index * 70}>
             <div className="space-y-3">
               <div className="flex items-center gap-2.5">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent">
@@ -60,9 +63,11 @@ export default function Timeline({
                 </div>
               )}
             </div>
+            </ScrollReveal>
           </li>
         ))}
       </ol>
+      {experiences.length > 0 && <TimelineEnd />}
     </div>
   );
 }
