@@ -1,8 +1,6 @@
 /**
  * Renders the hero introduction and contact information card.
  */
-import { Sparkles } from "lucide-react";
-
 import { AnimatedName } from "@/components/portfolio/animated-name";
 import { DraggableInfoCard } from "@/components/portfolio/draggable-info-card";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
@@ -10,15 +8,25 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection({ dictionary }) {
+  const nameDelay = 800;
+  const detailsDelay = nameDelay + Array.from(dictionary.hero.name).length * 58 + 150;
   return (
     <section id="hero" className="scroll-mt-20 px-4 py-16 md:py-24" data-nav-id="hero">
       <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[1.4fr_0.6fr]">
-        <ScrollReveal className="flex flex-col justify-center" direction="left">
+        <div className="flex flex-col justify-center">
+          <ScrollReveal direction="up">
+          <div dir="ltr" className="mb-3 flex w-fit items-center gap-2 font-mono text-sm">
+            <span aria-hidden="true" className="font-semibold text-primary">{">_"}</span>
+            <code className="text-muted-foreground">cat <span className="text-foreground">cv.html</span></code>
+          </div>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={400}>
           <Badge variant="outline" className="mb-4 w-fit bg-card">
-            <Sparkles className="me-1 h-3.5 w-3.5" />
             {dictionary.hero.eyebrow}
           </Badge>
-          <AnimatedName name={dictionary.hero.name} />
+          </ScrollReveal>
+          <AnimatedName name={dictionary.hero.name} delay={nameDelay} />
+          <ScrollReveal direction="up" delay={detailsDelay}>
           {dictionary.hero.arabicName && (
             <p className="mt-4 text-xl font-bold text-primary" lang="ar" dir="rtl">
               {dictionary.hero.arabicName}
@@ -33,9 +41,10 @@ export function HeroSection({ dictionary }) {
               <a href="mailto:moq3e2000@gmail.com">{dictionary.hero.secondaryAction}</a>
             </Button>
           </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
 
-        <ScrollReveal direction="right" delay={120}>
+        <ScrollReveal direction="right" delay={detailsDelay + 150}>
           <DraggableInfoCard dictionary={dictionary} />
         </ScrollReveal>
       </div>

@@ -3,34 +3,33 @@
 /**
  * Draggable contact info card.
  */
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useDragControls, useReducedMotion } from "motion/react";
 import { Globe, Mail, Phone, ShieldCheck } from "lucide-react";
 
 import { GithubIcon } from "@/components/icons/github-icon";
 import { LinkedinIcon } from "@/components/icons/linkedin-icon";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Safari_01 from "@/components/ui/safari-01";
 
 export function DraggableInfoCard({ dictionary }) {
   const shouldReduceMotion = useReducedMotion();
+  const dragControls = useDragControls();
 
   return (
     <motion.div
-      className="group relative cursor-grab active:cursor-grabbing"
+      className="relative min-w-0"
       drag={!shouldReduceMotion}
+      dragControls={dragControls}
+      dragListener={false}
       dragMomentum={false}
       whileDrag={{ scale: 1.02, zIndex: 30 }}
     >
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -end-6 -top-8 z-0 rotate-12 select-none text-7xl font-black leading-none text-primary/10 transition group-hover:text-primary/16"
+      <Safari_01
+        title={dictionary.sections.info}
+        onTitlePointerDown={(event) => {
+          if (!shouldReduceMotion) dragControls.start(event);
+        }}
       >
-        :)
-      </span>
-      <Card className="h-fit cursor-grab border-dashed transition group-hover:-translate-y-1 group-hover:border-primary group-hover:shadow-[0_22px_70px_rgba(59,130,246,0.22)] group-active:cursor-grabbing">
-        <CardHeader>
-          <CardTitle>{dictionary.sections.info}</CardTitle>
-        </CardHeader>
-        <CardContent className="grid gap-3">
+        <div className="grid gap-1">
           {[
             [Mail, dictionary.contact.email, "mailto:moq3e2000@gmail.com"],
             [Phone, dictionary.contact.phone, "tel:+966507485316"],
@@ -43,15 +42,15 @@ export function DraggableInfoCard({ dictionary }) {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noreferrer" : undefined}
-              className="flex min-w-0 items-center gap-3 text-sm text-muted-foreground transition hover:text-primary"
+              className="flex min-h-11 min-w-0 items-center gap-3 rounded-sm text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-ring"
               key={label}
             >
               <Icon className="h-4 w-4 shrink-0 text-secondary" />
-              <span className="truncate">{label}</span>
+              <span dir="ltr" className="truncate">{label}</span>
             </a>
           ))}
-        </CardContent>
-      </Card>
+        </div>
+      </Safari_01>
     </motion.div>
   );
 }

@@ -53,8 +53,9 @@ export const experience: Dictionary["experience"] = [
     ],
   },
   {
-    title: "Software Engineer",
-    company: "Qubes | Riyadh (Remote/Hybrid)",
+    title: "Software Engineer Specialist",
+    company: "Qubes\\Neyam | Riyadh (Remote/Hybrid)",
+    logo: "/imgs/neyam/Neyam_logo.webp",
     period: "2024 - 2025",
     technologies: ["Salla", "Shopify", "Data Warehouse"],
     items: [

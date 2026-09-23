@@ -8,9 +8,10 @@ import { motion, useReducedMotion } from "motion/react";
 
 type AnimatedNameProps = {
   name: string;
+  delay?: number;
 };
 
-export function AnimatedName({ name }: AnimatedNameProps) {
+export function AnimatedName({ name, delay = 180 }: AnimatedNameProps) {
   const shouldReduceMotion = useReducedMotion();
   const characters = useMemo(() => {
     if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
@@ -45,7 +46,7 @@ export function AnimatedName({ name }: AnimatedNameProps) {
           return current + 1;
         });
       }, 58);
-    }, 180);
+    }, delay);
 
     return () => {
       window.clearTimeout(startDelay);
@@ -54,7 +55,7 @@ export function AnimatedName({ name }: AnimatedNameProps) {
         window.clearInterval(interval);
       }
     };
-  }, [characters.length, shouldReduceMotion]);
+  }, [characters.length, shouldReduceMotion, delay]);
 
   const typedName = characters.slice(0, visibleCharacters).join("");
 
@@ -73,6 +74,7 @@ export function AnimatedName({ name }: AnimatedNameProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
+        delay: delay / 1000,
         duration: 0.24,
         ease: "easeOut",
       }}

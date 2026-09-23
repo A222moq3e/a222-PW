@@ -53,8 +53,9 @@ export const experience: Dictionary["experience"] = [
     ],
   },
   {
-    title: "مهندس برمجيات",
-    company: "Qubes | الرياض (عن بعد/هجين)",
+    title: "أخصائي هندسة برمجيات",
+    company: "Qubes\\Neyam | الرياض (عن بعد/هجين)",
+    logo: "/imgs/neyam/Neyam_logo.webp",
     period: "2024 - 2025",
     technologies: ["سلة", "Shopify", "مستودعات البيانات"],
     items: [
