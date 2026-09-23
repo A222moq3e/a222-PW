@@ -8,9 +8,9 @@ export const experience: Dictionary["experience"] = [
     title: "Software Engineer",
     company: "SITE",
     period: "2026 - Present",
-    technologies: ["Cybersecurity", "Backend Development", "Platform Architecture"],
+    technologies: ["Cybersecurity", "Platform Architecture", "Training", "Exercises", "Full Stack Development", "DevOps", "AI"],
     items: [
-      "Designed and developed a cybersecurity exercise and assessment platform for HCD to deliver cyber exercises, simulations, and assessments.",
+      "Designed and developed a cybersecurity exercise and assessment platform to deliver cyber exercises, simulations, and assessments.",
       "Built features for exercise management, participant engagement, assessment workflows, and performance tracking.",
       "Collaborated with stakeholders to translate cybersecurity training and evaluation requirements into scalable platform capabilities.",
       "Contributed to platform architecture, backend services, security controls, and deployment processes.",
@@ -20,7 +20,7 @@ export const experience: Dictionary["experience"] = [
     title: "Backend Developer & Security Tester",
     company: "Moqraraty | Riyadh (Remote/Hybrid)",
     period: "2024 - Present",
-    technologies: ["Docker", "Nginx", "API Security", "Penetration Testing"],
+    technologies: ["Docker", "Nginx", "API Security", "Penetration Testing", "Express.js", "PostgreSQL", "SQLite"],
     items: [
       "Built and maintained backend services with validation, authorization, and secure data-flow practices.",
       "Performed targeted web/API penetration testing and identified misconfigurations and input validation gaps.",
@@ -31,7 +31,7 @@ export const experience: Dictionary["experience"] = [
   {
     title: "Security Researcher",
     company: "Bugbounty.sa",
-    period: "2024 - Present",
+    period: "2024 - 2025",
     technologies: ["Web Security", "API Security", "Responsible Disclosure"],
     items: [
       "Researches and reports web security vulnerabilities through responsible disclosure workflows.",
