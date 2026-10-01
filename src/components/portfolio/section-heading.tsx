@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 export function SectionHeading({ eyebrow, title, icon: Icon }) {
   return (
     <ScrollReveal className="mb-5 flex items-center gap-3" direction="left">
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-primary shadow-sm">
+      <div data-launch-icon className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-primary shadow-sm">
         <Icon className="h-5 w-5" />
       </div>
       <div>

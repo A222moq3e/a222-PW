@@ -3,6 +3,7 @@
  */
 import { Award, Sparkles } from "lucide-react";
 
+import { AppLaunch, AppLaunchContent } from "@/components/portfolio/app-launch";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { Button } from "@/components/ui/button";
@@ -16,13 +17,13 @@ export function CredentialsSection({ dictionary }) {
       data-nav-id="credentials"
     >
       <div className="mx-auto grid w-full max-w-6xl gap-6 lg:grid-cols-2">
-        <div>
+        <AppLaunch>
           <SectionHeading
             eyebrow={dictionary.sections.credentials}
             title={dictionary.sections.credentials}
             icon={Award}
           />
-          <div className="grid gap-4">
+          <AppLaunchContent className="grid gap-4">
             {dictionary.certifications.map((certification, index) => (
               <ScrollReveal key={certification.title} delay={index * 80} direction="left">
                 <Card>
@@ -39,16 +40,16 @@ export function CredentialsSection({ dictionary }) {
                 </Card>
               </ScrollReveal>
             ))}
-          </div>
-        </div>
+          </AppLaunchContent>
+        </AppLaunch>
 
-        <div>
+        <AppLaunch>
           <SectionHeading
             eyebrow={dictionary.sections.achievements}
             title={dictionary.sections.achievements}
             icon={Sparkles}
           />
-          <div className="grid grid-cols-2 gap-4">
+          <AppLaunchContent className="grid grid-cols-2 gap-4">
             {dictionary.achievements.map(([value, label], index) => (
               <ScrollReveal key={label} delay={index * 70} direction="scale">
                 <Card>
@@ -59,8 +60,8 @@ export function CredentialsSection({ dictionary }) {
                 </Card>
               </ScrollReveal>
             ))}
-          </div>
-        </div>
+          </AppLaunchContent>
+        </AppLaunch>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
  */
 import { Globe } from "lucide-react";
 
+import { AppLaunch, AppLaunchContent } from "@/components/portfolio/app-launch";
 import { ProjectPreviewDialog } from "@/components/portfolio/project-preview-dialog";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { SectionHeading } from "@/components/portfolio/section-heading";
@@ -43,8 +44,9 @@ export function ProjectsSection({ dictionary }) {
 
   return (
     <section id="projects" className="scroll-mt-20 px-4 py-10" data-nav-id="projects">
-      <div className="mx-auto w-full max-w-6xl">
+      <AppLaunch className="mx-auto w-full max-w-6xl">
         <SectionHeading eyebrow={dictionary.sections.projects} title={dictionary.sections.projects} icon={Globe} />
+        <AppLaunchContent>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 70} direction="scale">
@@ -84,7 +86,8 @@ export function ProjectsSection({ dictionary }) {
             </a>
           </Button>
         </ScrollReveal>
-      </div>
+        </AppLaunchContent>
+      </AppLaunch>
     </section>
   );
 }
