@@ -1,9 +1,23 @@
 /**
  * Defines the required root HTML shell for the Next.js app.
  */
+import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
+
+// English text uses Geist; Arabic pages switch to Thmanyah Sans via .font-arabic.
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
 
 const thmanyahSans = localFont({
   src: [
@@ -40,7 +54,7 @@ const thmanyahSans = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={thmanyahSans.variable}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${thmanyahSans.variable}`}>{children}</body>
     </html>
   );
 }

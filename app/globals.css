@@ -42,6 +42,8 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 * {
@@ -68,8 +70,42 @@ body {
     44px 44px,
     100% 100%;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   line-height: 1.6;
+}
+
+/* Dark, rounded scrollbar that matches the desktop theme. */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060b14;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid #060b14;
+  border-radius: 999px;
+  background: var(--border);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: #060b14;
+}
+
+/* Firefox has no ::-webkit-scrollbar; Chrome ignores those rules when scrollbar-color is set, so scope it. */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: var(--border) #060b14;
+    scrollbar-width: thin;
+  }
 }
 
 ::selection {

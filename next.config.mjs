@@ -1,12 +1,15 @@
 import path from "node:path";
 
+// React needs eval() in development for its debugging call stacks; production never uses it.
+const isDev = process.env.NODE_ENV === "development";
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'none'",
   "object-src 'none'",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",
