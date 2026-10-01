@@ -62,7 +62,7 @@ export type Dictionary = {
   };
   contact: Record<"email" | "phone" | "website" | "linkedin" | "github" | "cyberhub", string>;
   sections: Record<
-    "info" | "experience" | "credentials" | "achievements" | "projects" | "skills" | "education" | "languages",
+    "info" | "experience" | "credentials" | "achievements" | "projects" | "skills" | "education" | "languages" | "educationLanguages",
     string
   >;
   experience: Experience[];

@@ -36,7 +36,7 @@ export function SiteHeader({ dictionary, locale }) {
       },
       {
         id: "education",
-        label: `${dictionary.sections.education}${pairedSeparator}${dictionary.sections.languages}`,
+        label: dictionary.sections.educationLanguages,
       },
     ];
   }, [dictionary, locale]);
@@ -60,27 +60,35 @@ export function SiteHeader({ dictionary, locale }) {
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    // The active section is the last one whose top has passed a line 30% down the viewport.
+    // Unlike intersection ratios, this works for very tall sections such as the experience timeline.
+    let frame = 0;
+    const updateActiveSection = () => {
+      frame = 0;
+      const activationLine = window.innerHeight * 0.3;
+      let activeId = sections[0].dataset.navId ?? navItems[0].id;
 
-        if (visibleEntry) {
-          const section = visibleEntry.target as HTMLElement;
-
-          setActiveSectionId(section.dataset.navId ?? navItems[0].id);
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= activationLine) {
+          activeId = section.dataset.navId ?? activeId;
         }
-      },
-      {
-        rootMargin: "-28% 0px -58% 0px",
-        threshold: [0.08, 0.18, 0.32, 0.48],
       }
-    );
 
-    sections.forEach((section) => observer.observe(section));
+      setActiveSectionId(activeId);
+    };
+    const handleScroll = () => {
+      if (!frame) frame = requestAnimationFrame(updateActiveSection);
+    };
 
-    return () => observer.disconnect();
+    updateActiveSection();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, [navItems]);
 
   const handleSectionChange = (sectionId: string) => {

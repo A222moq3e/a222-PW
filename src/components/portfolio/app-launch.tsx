@@ -3,14 +3,19 @@
 /**
  * Opens a section like a desktop app: a cursor double-clicks the section icon, then the content launches.
  */
-import { MousePointer2 } from "lucide-react";
-import { motion, useAnimate, useInView, useReducedMotion } from "motion/react";
+import { MousePointer2, Pointer } from "lucide-react";
+import { cubicBezier, motion, useAnimate, useInView, useReducedMotion } from "motion/react";
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
 const LaunchContext = createContext(true);
 const ease = [0.22, 1, 0.36, 1] as const;
+const easeFn = cubicBezier(...ease);
+const APPROACH_DELAY = 0.35;
+const APPROACH_DURATION = 0.6;
+// The pointer tip sits about 4px into the cursor's box.
+const TIP = 4;
 
 export function AppLaunch({ children, className }: { children: ReactNode; className?: string }) {
   const shouldReduceMotion = useReducedMotion();
@@ -18,6 +23,7 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
   const isInView = useInView(scope, { once: true, margin: "0px 0px -20% 0px" });
   const [launched, setLaunched] = useState(false);
   const [cursorDone, setCursorDone] = useState(false);
+  const [isOverIcon, setIsOverIcon] = useState(false);
 
   useEffect(() => {
     if (shouldReduceMotion) {
@@ -36,6 +42,7 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
     }
 
     let cancelled = false;
+    let hoverTimer: ReturnType<typeof setTimeout> | undefined;
     // Use layout offsets so the heading's own reveal transform doesn't skew the target.
     let offsetX = 0;
     let offsetY = 0;
@@ -44,9 +51,33 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
       offsetY += el.offsetTop;
     }
     const side = getComputedStyle(root).direction === "rtl" ? -1 : 1;
-    // The pointer tip sits about 4px into the icon's box.
-    const targetX = offsetX + icon.offsetWidth / 2 - 4;
-    const targetY = offsetY + icon.offsetHeight / 2 - 4;
+    const targetX = offsetX + icon.offsetWidth / 2 - TIP;
+    const targetY = offsetY + icon.offsetHeight / 2 - TIP;
+    const startX = targetX + 110 * side;
+    const startY = targetY + 70;
+
+    // Find when the moving tip first crosses into the icon, so the hand appears on hover, not on arrival.
+    const isOverIconAt = (fraction: number) => {
+      const tipX = startX + (targetX - startX) * fraction + TIP;
+      const tipY = startY + (targetY - startY) * fraction + TIP;
+      return (
+        tipX >= offsetX && tipX <= offsetX + icon.offsetWidth && tipY >= offsetY && tipY <= offsetY + icon.offsetHeight
+      );
+    };
+    let entryFraction = 1;
+    for (let f = 0; f <= 1; f += 0.01) {
+      if (isOverIconAt(f)) {
+        entryFraction = f;
+        break;
+      }
+    }
+    let entryTime = 1;
+    for (let t = 0; t <= 1; t += 0.01) {
+      if (easeFn(t) >= entryFraction) {
+        entryTime = t;
+        break;
+      }
+    }
 
     const press = async () => {
       await Promise.all([
@@ -55,20 +86,31 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
       ]);
       await Promise.all([
         animate(cursor, { scale: 1 }, { duration: 0.08 }),
-        animate(icon, { scale: 1 }, { duration: 0.08 }),
+        animate(icon, { scale: 1.06 }, { duration: 0.08 }),
       ]);
     };
 
     const run = async () => {
-      animate(cursor, { x: targetX + 110 * side, y: targetY + 70, opacity: 0 }, { duration: 0 });
-      await animate(cursor, { x: targetX, y: targetY, opacity: 1 }, { delay: 0.35, duration: 0.5, ease });
+      animate(cursor, { x: startX, y: startY, opacity: 0 }, { duration: 0 });
+      // Like a real OS, the arrow turns into the link hand as soon as it hovers the icon.
+      hoverTimer = setTimeout(() => {
+        setIsOverIcon(true);
+        animate(icon, { scale: 1.06 }, { duration: 0.15 });
+      }, (APPROACH_DELAY + entryTime * APPROACH_DURATION) * 1000);
+      await animate(
+        cursor,
+        { x: targetX, y: targetY, opacity: 1 },
+        { delay: APPROACH_DELAY, duration: APPROACH_DURATION, ease },
+      );
+      if (cancelled) return;
+      await animate(cursor, { scale: 1 }, { duration: 0.12 });
       if (cancelled) return;
       await press();
       if (cancelled) return;
       await press();
       if (cancelled) return;
       setLaunched(true);
-      animate(icon, { boxShadow: "0 0 0 0px rgba(59, 130, 246, 0)" }, { duration: 0.4 });
+      animate(icon, { scale: 1, boxShadow: "0 0 0 0px rgba(59, 130, 246, 0)" }, { duration: 0.4 });
       await animate(cursor, { opacity: 0, x: targetX + 16 * side, y: targetY + 20 }, { delay: 0.15, duration: 0.35 });
       if (!cancelled) setCursorDone(true);
     };
@@ -76,6 +118,7 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
     run();
     return () => {
       cancelled = true;
+      clearTimeout(hoverTimer);
     };
   }, [animate, isInView, scope, shouldReduceMotion]);
 
@@ -90,7 +133,12 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
             className="pointer-events-none absolute left-0 top-0 z-20"
             style={{ opacity: 0 }}
           >
-            <MousePointer2 className="size-6 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
+            {isOverIcon ? (
+              // Shifted so the fingertip lands where the arrow tip was.
+              <Pointer className="size-6 -translate-x-1 translate-y-0.5 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
+            ) : (
+              <MousePointer2 className="size-6 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
+            )}
           </span>
         )}
       </div>

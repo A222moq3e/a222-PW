@@ -4,6 +4,7 @@
 import { Globe } from "lucide-react";
 
 import { AppLaunch, AppLaunchContent } from "@/components/portfolio/app-launch";
+import { GithubIcon } from "@/components/icons/github-icon";
 import { ProjectPreviewDialog } from "@/components/portfolio/project-preview-dialog";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { SectionHeading } from "@/components/portfolio/section-heading";
@@ -80,8 +81,9 @@ export function ProjectsSection({ dictionary }) {
           ))}
         </div>
         <ScrollReveal className="mt-6 flex justify-center" direction="up">
-          <Button asChild variant="outline" className="bg-white hover:bg-slate-100">
-            <a href="https://github.com/A222moq3e" target="_blank" rel="noreferrer" className="!text-slate-950 hover:!text-slate-950">
+          <Button asChild variant="outline" className="bg-card hover:border-primary">
+            <a href="https://github.com/A222moq3e" target="_blank" rel="noreferrer">
+              <GithubIcon className="text-secondary" />
               {dictionary.projectText.seeMore}
             </a>
           </Button>

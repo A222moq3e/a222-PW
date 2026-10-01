@@ -12,4 +12,5 @@ export const sections: Dictionary["sections"] = {
   skills: "Skills",
   education: "Education",
   languages: "Languages",
+  educationLanguages: "Education & Languages",
 };

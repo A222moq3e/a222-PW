@@ -9,6 +9,7 @@ import { HeroSection } from "@/components/portfolio/hero-section";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
 import { SiteFooter } from "@/components/portfolio/site-footer";
 import { SiteHeader } from "@/components/portfolio/site-header";
+import { PeekCursors } from "@/components/portfolio/peek-cursors";
 import { ScrollHint } from "@/components/portfolio/scroll-hint";
 import { SkillsSection } from "@/components/portfolio/skills-section";
 
@@ -26,6 +27,7 @@ export function PortfolioPage({ dictionary, locale }) {
         <EducationLanguagesSection dictionary={dictionary} />
         <SiteFooter />
         <ScrollHint label={dictionary.hero.scrollHint} />
+        <PeekCursors />
       </div>
     </main>
   );
