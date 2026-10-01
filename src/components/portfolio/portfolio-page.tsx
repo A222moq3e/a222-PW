@@ -9,11 +9,12 @@ import { HeroSection } from "@/components/portfolio/hero-section";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
 import { SiteFooter } from "@/components/portfolio/site-footer";
 import { SiteHeader } from "@/components/portfolio/site-header";
+import { ScrollHint } from "@/components/portfolio/scroll-hint";
 import { SkillsSection } from "@/components/portfolio/skills-section";
 
 export function PortfolioPage({ dictionary, locale }) {
   return (
-    <main className="relative isolate min-h-screen">
+    <main className="relative isolate min-h-screen overflow-x-clip">
       <CursorSpark />
       <div className="relative z-10">
         <SiteHeader dictionary={dictionary} locale={locale} />
@@ -24,6 +25,7 @@ export function PortfolioPage({ dictionary, locale }) {
         <SkillsSection dictionary={dictionary} />
         <EducationLanguagesSection dictionary={dictionary} />
         <SiteFooter />
+        <ScrollHint label={dictionary.hero.scrollHint} />
       </div>
     </main>
   );

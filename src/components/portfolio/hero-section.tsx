@@ -44,9 +44,7 @@ export function HeroSection({ dictionary }) {
           </ScrollReveal>
         </div>
 
-        <ScrollReveal direction="right" delay={detailsDelay + 150}>
-          <DraggableInfoCard dictionary={dictionary} />
-        </ScrollReveal>
+        <DraggableInfoCard dictionary={dictionary} delay={detailsDelay + 150} />
       </div>
     </section>
   );

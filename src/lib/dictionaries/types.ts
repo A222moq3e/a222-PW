@@ -58,6 +58,7 @@ export type Dictionary = {
     summary: string;
     primaryAction: string;
     secondaryAction: string;
+    scrollHint: string;
   };
   contact: Record<"email" | "phone" | "website" | "linkedin" | "github" | "cyberhub", string>;
   sections: Record<

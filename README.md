@@ -13,6 +13,18 @@ Professional bilingual portfolio for Abdullah bin Ammar, built with Next.js App 
 - Lucide icons
 - Docker production image with Next standalone output
 
+## Visual Direction
+
+The site uses a **desktop-style theme**: the portfolio should feel like a developer's desktop, with windows and terminal hints sitting on a dark, blueprint-like wallpaper. Keep new UI consistent with these rules:
+
+- **Windows, not plain cards.** Main panels use a desktop window frame (`src/components/ui/safari-01.tsx`): a title bar with an icon and title, plus Windows-style minimize / maximize / close controls. The controls are decorative and stay `aria-hidden`.
+- **Windows can be moved.** The hero info window can be dragged by its title bar (`draggable-info-card.tsx`), like a real desktop window. Dragging is turned off when the user prefers reduced motion.
+- **Terminal touches.** Small monospace prompts such as `>_ cat cv.html` above the hero name hint at a shell. Use them sparingly, as accents.
+- **Desktop wallpaper background.** A dark navy base with a faint 44px grid and soft blue / cyan glows (`app/globals.css`). A spotlight follows the pointer on desktop (`cursor-spark.tsx`).
+- **Dark palette with blue and cyan accents.** Colors come from the tokens in `app/globals.css`. `primary` is blue and `secondary` is cyan. Use the tokens instead of hard-coded colors.
+- **Calm motion.** Content reveals on scroll (`scroll-reveal.tsx`), the timeline draws itself in (`timeline-decoration.tsx`), and the name animates in. Every animation respects `prefers-reduced-motion`.
+- **Bilingual and RTL-safe.** Layouts must work in Arabic (RTL). Use logical properties like `start` / `end` and `ms` / `me`. Keep window controls and code snippets `dir="ltr"`.
+
 ## Routes
 
 ```text
@@ -31,15 +43,11 @@ npm run dev
 Open:
 
 ```text
-http://127.0.0.1:3000/en
-http://127.0.0.1:3000/ar
+http://127.0.0.1:10222/en
+http://127.0.0.1:10222/ar
 ```
 
-If port `3000` is busy:
-
-```powershell
-npm run dev -- --hostname 127.0.0.1 --port 3100
-```
+The dev server always uses port `10222`, which is set in the `dev` script in `package.json`.
 
 ## Production Build
 
