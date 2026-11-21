@@ -44,6 +44,7 @@ export function CredentialsSection({ dictionary }) {
           </SortableCards></AppLaunchContent>
         </AppLaunch>
 
+        <div id="achievements" data-nav-id="achievements" className="scroll-mt-20">
         <AppLaunch>
           <SectionHeading
             eyebrow={dictionary.sections.achievements}
@@ -65,6 +66,7 @@ export function CredentialsSection({ dictionary }) {
             ))}
           </SortableCards></AppLaunchContent>
         </AppLaunch>
+        </div>
       </div>
     </section>
   );
