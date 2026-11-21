@@ -3,26 +3,27 @@
 import NumberFlow from "@number-flow/react";
 import { useInView, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { useAppLaunched } from "@/components/portfolio/app-launch";
+import { useAppLaunched, useLaunchHistory } from "@/components/portfolio/app-launch";
 
 /** Keeps the original ranking text accessible while its digits roll into view. */
 export function AchievementNumber({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
   const launched = useAppLaunched();
-  const [ready, setReady] = useState(false);
+  const history = useLaunchHistory();
+  const [ready, setReady] = useState(() => history?.has(value) ?? false);
   const reduceMotion = useReducedMotion();
   const match = value.match(/^(.*?)(\d+)([^\d]*)$/);
 
   useEffect(() => {
-    if (!launched || !isInView) {
-      setReady(false);
-      return;
-    }
+    if (ready || !launched || !isInView) return;
     // Wait until the app-launch and card reveals have exposed the digits.
-    const timer = setTimeout(() => setReady(true), 500);
+    const timer = setTimeout(() => {
+      history?.add(value);
+      setReady(true);
+    }, 500);
     return () => clearTimeout(timer);
-  }, [launched, isInView]);
+  }, [launched, isInView, ready, history, value]);
 
   if (!match) return <span>{value}</span>;
 

@@ -11,6 +11,10 @@ import { CURSOR_HOTSPOTS, DesktopCursor } from "@/components/ui/desktop-cursor";
 import { cn } from "@/lib/utils";
 
 const LaunchContext = createContext(true);
+const LaunchHistoryContext = createContext<Set<string> | null>(null);
+export function useLaunchHistory() {
+  return useContext(LaunchHistoryContext);
+}
 export function useAppLaunched() {
   return useContext(LaunchContext);
 }
@@ -27,6 +31,7 @@ const RIPPLE_SIZE = 32;
 export function AppLaunch({ children, className }: { children: ReactNode; className?: string }) {
   const host = useRef<HTMLDivElement>(null);
   const [revision, setRevision] = useState(0);
+  const history = useRef(new Set<string>());
 
   useEffect(() => {
     const replay = (event: Event) => {
@@ -42,7 +47,9 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
     <div ref={host} className={className} onClick={(event) => {
       if ((event.target as HTMLElement).closest("[data-launch-icon]")) setRevision((current) => current + 1);
     }}>
-      <AppLaunchAnimation key={revision}>{children}</AppLaunchAnimation>
+      <LaunchHistoryContext.Provider value={history.current}>
+        <AppLaunchAnimation key={revision}>{children}</AppLaunchAnimation>
+      </LaunchHistoryContext.Provider>
     </div>
   );
 }
