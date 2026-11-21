@@ -3,10 +3,10 @@
 /**
  * Opens a section like a desktop app: a cursor double-clicks the section icon, then the content launches.
  */
-import { MousePointer2, Pointer } from "lucide-react";
 import { cubicBezier, motion, useAnimate, useInView, useReducedMotion } from "motion/react";
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
+import { CURSOR_HOTSPOTS, DesktopCursor } from "@/components/ui/desktop-cursor";
 import { cn } from "@/lib/utils";
 
 const LaunchContext = createContext(true);
@@ -14,8 +14,11 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const easeFn = cubicBezier(...ease);
 const APPROACH_DELAY = 0.35;
 const APPROACH_DURATION = 0.6;
-// The pointer tip sits about 4px into the cursor's box.
-const TIP = 4;
+const TIP_X = CURSOR_HOTSPOTS.arrow.x;
+const TIP_Y = CURSOR_HOTSPOTS.arrow.y;
+// Shift the hand so its fingertip lands exactly where the arrow tip was.
+const HAND_SHIFT = `translate(${TIP_X - CURSOR_HOTSPOTS.hand.x}px, ${TIP_Y - CURSOR_HOTSPOTS.hand.y}px)`;
+const RIPPLE_SIZE = 32;
 
 export function AppLaunch({ children, className }: { children: ReactNode; className?: string }) {
   const shouldReduceMotion = useReducedMotion();
@@ -36,7 +39,8 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
     const root = scope.current;
     const icon = root.querySelector("[data-launch-icon]");
     const cursor = root.querySelector("[data-launch-cursor]");
-    if (!icon || !cursor) {
+    const ripple = root.querySelector("[data-launch-ripple]");
+    if (!icon || !cursor || !ripple) {
       setLaunched(true);
       return;
     }
@@ -51,15 +55,15 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
       offsetY += el.offsetTop;
     }
     const side = getComputedStyle(root).direction === "rtl" ? -1 : 1;
-    const targetX = offsetX + icon.offsetWidth / 2 - TIP;
-    const targetY = offsetY + icon.offsetHeight / 2 - TIP;
+    const targetX = offsetX + icon.offsetWidth / 2 - TIP_X;
+    const targetY = offsetY + icon.offsetHeight / 2 - TIP_Y;
     const startX = targetX + 110 * side;
     const startY = targetY + 70;
 
     // Find when the moving tip first crosses into the icon, so the hand appears on hover, not on arrival.
     const isOverIconAt = (fraction: number) => {
-      const tipX = startX + (targetX - startX) * fraction + TIP;
-      const tipY = startY + (targetY - startY) * fraction + TIP;
+      const tipX = startX + (targetX - startX) * fraction + TIP_X;
+      const tipY = startY + (targetY - startY) * fraction + TIP_Y;
       return (
         tipX >= offsetX && tipX <= offsetX + icon.offsetWidth && tipY >= offsetY && tipY <= offsetY + icon.offsetHeight
       );
@@ -80,6 +84,8 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
     }
 
     const press = async () => {
+      // A ring pulses out from the fingertip on every click.
+      animate(ripple, { scale: [0.2, 1.6], opacity: [0.8, 0] }, { duration: 0.45, ease: "easeOut" });
       await Promise.all([
         animate(cursor, { scale: 0.82 }, { duration: 0.08 }),
         animate(icon, { scale: 0.9, boxShadow: "0 0 0 6px rgba(59, 130, 246, 0.35)" }, { duration: 0.08 }),
@@ -92,6 +98,11 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
 
     const run = async () => {
       animate(cursor, { x: startX, y: startY, opacity: 0 }, { duration: 0 });
+      animate(
+        ripple,
+        { x: targetX + TIP_X - RIPPLE_SIZE / 2, y: targetY + TIP_Y - RIPPLE_SIZE / 2, opacity: 0 },
+        { duration: 0 },
+      );
       // Like a real OS, the arrow turns into the link hand as soon as it hovers the icon.
       hoverTimer = setTimeout(() => {
         setIsOverIcon(true);
@@ -127,19 +138,26 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
       <div ref={scope} className={cn("relative", className)}>
         {children}
         {!cursorDone && (
-          <span
-            data-launch-cursor
-            aria-hidden="true"
-            className="pointer-events-none absolute left-0 top-0 z-20"
-            style={{ opacity: 0 }}
-          >
-            {isOverIcon ? (
-              // Shifted so the fingertip lands where the arrow tip was.
-              <Pointer className="size-6 -translate-x-1 translate-y-0.5 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
-            ) : (
-              <MousePointer2 className="size-6 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
-            )}
-          </span>
+          <>
+            <span
+              data-launch-ripple
+              aria-hidden="true"
+              className="pointer-events-none absolute left-0 top-0 z-20 rounded-full border-2 border-secondary"
+              style={{ width: RIPPLE_SIZE, height: RIPPLE_SIZE, opacity: 0 }}
+            />
+            <span
+              data-launch-cursor
+              aria-hidden="true"
+              className="pointer-events-none absolute left-0 top-0 z-20"
+              style={{ opacity: 0, transformOrigin: `${TIP_X}px ${TIP_Y}px` }}
+            >
+              {isOverIcon ? (
+                <DesktopCursor variant="hand" className="block" style={{ transform: HAND_SHIFT }} />
+              ) : (
+                <DesktopCursor variant="arrow" className="block" />
+              )}
+            </span>
+          </>
         )}
       </div>
     </LaunchContext.Provider>

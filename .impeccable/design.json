@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T06:42:05.328601+00:00",
+  "title": "Design System: Abdullah bin Ammar — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "terminal-blue": {
+        "role": "primary",
+        "displayName": "Terminal Blue",
+        "canonical": "#3b82f6",
+        "tonalRamp": [
+          "#031e49",
+          "#06347f",
+          "#084ab4",
+          "#0b60ea",
+          "#377ff6",
+          "#6da2f8",
+          "#a7c7fb",
+          "#e7effe"
+        ]
+      },
+      "signal-cyan": {
+        "role": "secondary",
+        "displayName": "Signal Cyan",
+        "canonical": "#22d3ee",
+        "tonalRamp": [
+          "#053e47",
+          "#096c7b",
+          "#0d9aaf",
+          "#11c8e3",
+          "#3dd8f0",
+          "#71e3f4",
+          "#aaeef8",
+          "#e7fafd"
+        ]
+      },
+      "signal-cyan-ink": {
+        "role": "secondary",
+        "displayName": "Signal Cyan Ink",
+        "canonical": "#06212b",
+        "tonalRamp": [
+          "#093443",
+          "#105974",
+          "#177fa6",
+          "#1ea5d7",
+          "#48bbe5",
+          "#79cdec",
+          "#aee1f4",
+          "#e9f7fc"
+        ]
+      },
+      "focus-ring": {
+        "role": "secondary",
+        "displayName": "Focus Ring",
+        "canonical": "#60a5fa",
+        "tonalRamp": [
+          "#02234a",
+          "#043c81",
+          "#0655b7",
+          "#076eed",
+          "#348cf9",
+          "#6babfa",
+          "#a6cdfc",
+          "#e6f1fe"
+        ]
+      },
+      "midnight-blueprint": {
+        "role": "neutral",
+        "displayName": "Midnight Blueprint",
+        "canonical": "#08111f",
+        "tonalRamp": [
+          "#10213d",
+          "#1b3a69",
+          "#275296",
+          "#326bc3",
+          "#5989d4",
+          "#85a9e0",
+          "#b6cbec",
+          "#ebf1fa"
+        ]
+      },
+      "blueprint-dusk": {
+        "role": "neutral",
+        "displayName": "Blueprint Dusk",
+        "canonical": "#0b1627",
+        "tonalRamp": [
+          "#11223c",
+          "#1d3a67",
+          "#2a5393",
+          "#366cbf",
+          "#5c8ad1",
+          "#88a9dd",
+          "#b7cceb",
+          "#ebf1f9"
+        ]
+      },
+      "blueprint-floor": {
+        "role": "neutral",
+        "displayName": "Blueprint Floor",
+        "canonical": "#060b14",
+        "tonalRamp": [
+          "#12203b",
+          "#1f3866",
+          "#2c5091",
+          "#3868bc",
+          "#5e86cf",
+          "#89a7dc",
+          "#b8caea",
+          "#ebf0f9"
+        ]
+      },
+      "window-panel": {
+        "role": "neutral",
+        "displayName": "Window Panel",
+        "canonical": "#0f1b2d",
+        "tonalRamp": [
+          "#132239",
+          "#213c63",
+          "#2f558e",
+          "#3d6eb8",
+          "#628ccb",
+          "#8cabd9",
+          "#bacde8",
+          "#ecf1f9"
+        ]
+      },
+      "raised-panel": {
+        "role": "neutral",
+        "displayName": "Raised Panel",
+        "canonical": "#13233a",
+        "tonalRamp": [
+          "#13233a",
+          "#213c64",
+          "#2f568e",
+          "#3c6fb8",
+          "#618dcb",
+          "#8cacd9",
+          "#bacde8",
+          "#ecf1f9"
+        ]
+      },
+      "selected-panel": {
+        "role": "neutral",
+        "displayName": "Selected Panel",
+        "canonical": "#102a44",
+        "tonalRamp": [
+          "#0f263e",
+          "#19426b",
+          "#245e99",
+          "#2f7ac6",
+          "#5696d7",
+          "#83b2e2",
+          "#b5d1ee",
+          "#eaf2fa"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#22324a",
+        "tonalRamp": [
+          "#182334",
+          "#2a3d5b",
+          "#3b5781",
+          "#4d71a8",
+          "#708fbd",
+          "#96adcf",
+          "#c0cee2",
+          "#eef1f7"
+        ]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Text Primary",
+        "canonical": "#e5eefb",
+        "tonalRamp": [
+          "#0a2142",
+          "#123973",
+          "#1952a4",
+          "#216ad4",
+          "#4a89e3",
+          "#7aa8eb",
+          "#afcbf3",
+          "#e9f1fc"
+        ]
+      },
+      "text-strong": {
+        "role": "neutral",
+        "displayName": "Text Strong",
+        "canonical": "#f8fafc",
+        "tonalRamp": [
+          "#172636",
+          "#28425d",
+          "#395e84",
+          "#497aab",
+          "#6d96c0",
+          "#94b2d1",
+          "#bfd1e3",
+          "#edf2f7"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Text Muted",
+        "canonical": "#94a3b8",
+        "tonalRamp": [
+          "#1f252e",
+          "#354050",
+          "#4b5b71",
+          "#627693",
+          "#8193ac",
+          "#a3b0c2",
+          "#c8d0da",
+          "#f0f2f5"
+        ]
+      },
+      "text-on-selected": {
+        "role": "neutral",
+        "displayName": "Text on Selected",
+        "canonical": "#dbeafe",
+        "tonalRamp": [
+          "#02214a",
+          "#043981",
+          "#0552b8",
+          "#076aee",
+          "#3488f9",
+          "#6aa8fb",
+          "#a6cbfd",
+          "#e6f1fe"
+        ]
+      },
+      "text-on-accent": {
+        "role": "neutral",
+        "displayName": "Text on Accent",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#969696",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f2f2f2"
+        ]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Danger",
+        "canonical": "#ef4444",
+        "tonalRamp": [
+          "#460606",
+          "#7a0a0a",
+          "#ae0f0f",
+          "#e21313",
+          "#ef3e3e",
+          "#f37272",
+          "#f8aaaa",
+          "#fde8e8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero name only, typed in with a Terminal Blue caret."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles beside their icon tile."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Job titles, project and certificate names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Hero summary and longer text."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Descriptions, bullets, contact rows, metadata."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase Terminal Blue eyebrows and badges."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Shell prompts and visitor-pointer name tags only."
+      },
+      "arabic": {
+        "displayName": "Arabic",
+        "purpose": "Whole-page font on /ar (Thmanyah Sans)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-lift",
+        "value": "0 18px 50px rgba(0,0,0,0.22)",
+        "purpose": "Cards resting on the desktop."
+      },
+      {
+        "name": "window-lift",
+        "value": "0 16px 48px rgba(0,0,0,0.3)",
+        "purpose": "OS windows such as the info window."
+      },
+      {
+        "name": "menu-float",
+        "value": "0 18px 60px rgba(0,0,0,0.42)",
+        "purpose": "Dropdown menus and anything above windows."
+      },
+      {
+        "name": "header-bar",
+        "value": "0 14px 46px rgba(0,0,0,0.26)",
+        "purpose": "Sticky header once scrolled."
+      },
+      {
+        "name": "click-glow",
+        "value": "0 0 0 6px rgba(59,130,246,0.35)",
+        "purpose": "Section icon at the moment it is clicked."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-reveal",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Scroll reveals, section launch, cursor approach (0.45-0.68s)."
+      },
+      {
+        "name": "ease-drag",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "The info window being dragged into place (0.9s)."
+      },
+      {
+        "name": "press",
+        "value": "80ms down + 80ms up",
+        "purpose": "Each click of the section launcher; a double-click is two presses."
+      },
+      {
+        "name": "pointer-burst",
+        "value": "6-10 pointers, first at 12s, then every 40-70s, 2-3s each",
+        "purpose": "Decorative visitor pointers; skipped under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action per view, e.g. View projects.",
+      "html": "<button class=\"ds-btn-primary\">View projects</button>",
+      "css": ".ds-btn-primary{font-family:Geist,Arial,Helvetica,sans-serif;display:inline-flex;align-items:center;gap:8px;height:36px;padding:8px 16px;border:0;border-radius:6px;background:var(--primary,#3b82f6);color:#fff;font-size:14px;font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:background .15s;cursor:pointer}.ds-btn-primary:hover{background:rgba(59,130,246,.9)}.ds-btn-primary:focus-visible{outline:none;box-shadow:0 0 0 1px var(--ring,#60a5fa)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions such as Contact and See more.",
+      "html": "<button class=\"ds-btn-outline\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"#22d3ee\"><path d=\"M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.17c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18A10.9 10.9 0 0 1 12 6.01c.98 0 1.96.13 2.88.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z\"/></svg>See more</button>",
+      "css": ".ds-btn-outline{font-family:Geist,Arial,Helvetica,sans-serif;display:inline-flex;align-items:center;gap:8px;height:36px;padding:8px 16px;border:1px solid var(--border,#22324a);border-radius:6px;background:var(--card,#0f1b2d);color:var(--foreground,#e5eefb);font-size:14px;font-weight:500;transition:background .15s,border-color .15s;cursor:pointer}.ds-btn-outline:hover{background:var(--accent,#102a44);color:var(--accent-foreground,#dbeafe);border-color:var(--primary,#3b82f6)}.ds-btn-outline:focus-visible{outline:none;box-shadow:0 0 0 1px var(--ring,#60a5fa)}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Project links: Open, Website, GitHub, Preview.",
+      "html": "<button class=\"ds-btn-ghost\">Preview</button>",
+      "css": ".ds-btn-ghost{font-family:Geist,Arial,Helvetica,sans-serif;height:32px;padding:0 12px;border:0;border-radius:6px;background:transparent;color:var(--foreground,#e5eefb);font-size:12px;font-weight:500;transition:background .15s;cursor:pointer}.ds-btn-ghost:hover{background:var(--accent,#102a44);color:var(--accent-foreground,#dbeafe)}.ds-btn-ghost:focus-visible{outline:none;box-shadow:0 0 0 1px var(--ring,#60a5fa)}"
+    },
+    {
+      "name": "Tech Chip",
+      "kind": "chip",
+      "refersTo": "tech-chip",
+      "description": "Technologies under each experience entry.",
+      "html": "<span class=\"ds-chip\">Next.js</span> <span class=\"ds-chip\">Burp Suite</span>",
+      "css": ".ds-chip{font-family:Geist,Arial,Helvetica,sans-serif;display:inline-flex;padding:2px 10px;border-radius:9999px;background:var(--muted,#13233a);color:var(--foreground,#e5eefb);font-size:12px;font-weight:600}"
+    },
+    {
+      "name": "Proof Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Certificates, achievements, skills, and projects resting on the desktop.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-title\">eWPT</div><div class=\"ds-card-provider\">INE / eLearnSecurity</div><p class=\"ds-card-desc\">Web Application Penetration Tester focused on web vulnerabilities and methodology.</p></div>",
+      "css": ".ds-card{font-family:Geist,Arial,Helvetica,sans-serif;max-width:320px;padding:24px;border:1px solid var(--border,#22324a);border-radius:12px;background:rgba(15,27,45,.92);color:var(--card-foreground,#f8fafc);box-shadow:0 18px 50px rgba(0,0,0,.22);backdrop-filter:blur(8px);transition:transform .2s,border-color .2s}.ds-card:hover{transform:translateY(-4px);border-color:var(--primary,#3b82f6)}.ds-card-title{font-weight:600;line-height:1}.ds-card-provider{margin-top:6px;font-size:14px;font-weight:500;color:var(--primary,#3b82f6)}.ds-card-desc{margin:6px 0 0;font-size:14px;color:var(--muted-foreground,#94a3b8)}"
+    },
+    {
+      "name": "OS Window",
+      "kind": "custom",
+      "refersTo": "window",
+      "description": "Signature desktop window with title bar and decorative controls; draggable by its title bar.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-window-bar\"><span class=\"ds-window-title\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 16v-4M12 8h.01\"/></svg>Info</span><span class=\"ds-window-ctrls\"><span>&#8211;</span><span>&#9633;</span><span>&#10005;</span></span></div><div class=\"ds-window-body\"><div class=\"ds-window-row\"><span class=\"ds-dot\"></span>a222ghoul.com</div><div class=\"ds-window-row\"><span class=\"ds-dot\"></span>github.com/A222moq3e</div></div></div>",
+      "css": ".ds-window{font-family:Geist,Arial,Helvetica,sans-serif;width:320px;overflow:hidden;border:1px solid var(--border,#22324a);border-radius:8px;background:var(--card,#0f1b2d);color:var(--card-foreground,#f8fafc);box-shadow:0 16px 48px rgba(0,0,0,.3)}.ds-window-bar{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding-left:16px;border-bottom:1px solid var(--border,#22324a);background:var(--muted,#13233a);cursor:grab}.ds-window-bar:active{cursor:grabbing}.ds-window-title{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500}.ds-window-ctrls{display:flex;align-self:stretch;color:var(--muted-foreground,#94a3b8)}.ds-window-ctrls span{display:flex;width:36px;align-items:center;justify-content:center}.ds-window-body{display:grid;gap:4px;padding:20px}.ds-window-row{display:flex;align-items:center;gap:12px;min-height:44px;font-size:14px;color:var(--muted-foreground,#94a3b8);transition:color .15s}.ds-window-row:hover{color:var(--primary,#3b82f6)}.ds-dot{width:16px;height:16px;border-radius:4px;background:var(--secondary,#22d3ee)}"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "section-icon",
+      "description": "Icon tile plus eyebrow and headline; the tile is what the launcher pointer double-clicks.",
+      "html": "<div class=\"ds-heading\"><span class=\"ds-heading-icon\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"2\" y=\"7\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\"/></svg></span><span><span class=\"ds-heading-eyebrow\">Experience</span><span class=\"ds-heading-title\">Experience</span></span></div>",
+      "css": ".ds-heading{font-family:Geist,Arial,Helvetica,sans-serif;display:flex;align-items:center;gap:12px}.ds-heading-icon{display:flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid var(--border,#22324a);border-radius:8px;background:var(--card,#0f1b2d);color:var(--primary,#3b82f6);transition:transform .15s,box-shadow .15s}.ds-heading-icon:hover{transform:scale(1.06)}.ds-heading-icon:active{transform:scale(.9);box-shadow:0 0 0 6px rgba(59,130,246,.35)}.ds-heading-eyebrow{display:block;font-size:12px;font-weight:600;text-transform:uppercase;color:var(--primary,#3b82f6)}.ds-heading-title{display:block;font-size:24px;font-weight:700;color:var(--foreground,#e5eefb)}"
+    },
+    {
+      "name": "Section Switcher",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Sticky header: plain bold section name with chevron, plus language toggle.",
+      "html": "<div class=\"ds-nav\"><button class=\"ds-nav-switch\">Experience <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m6 9 6 6 6-6\"/></svg></button><button class=\"ds-nav-locale\">AR</button></div>",
+      "css": ".ds-nav{font-family:Geist,Arial,Helvetica,sans-serif;display:flex;width:520px;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(34,50,74,.8);background:rgba(8,17,31,.86);box-shadow:0 14px 46px rgba(0,0,0,.26);backdrop-filter:blur(24px)}.ds-nav-switch{display:flex;align-items:center;gap:6px;height:36px;border:0;background:transparent;color:var(--foreground,#e5eefb);font-size:14px;font-weight:700;cursor:pointer;transition:color .15s}.ds-nav-switch:hover{color:var(--primary,#3b82f6)}.ds-nav-locale{height:32px;padding:0 12px;border:1px solid var(--border,#22324a);border-radius:6px;background:var(--background,#08111f);color:var(--foreground,#e5eefb);font-size:12px;font-weight:700;cursor:pointer}.ds-nav-locale:hover{background:var(--accent,#102a44)}"
+    },
+    {
+      "name": "Desktop Wallpaper",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Midnight Blueprint: navy gradient, 44px grid, soft blue glow, with a shell prompt.",
+      "html": "<div class=\"ds-wall\"><span class=\"ds-wall-prompt\"><b>&gt;_</b> cat <i>cv.html</i></span></div>",
+      "css": ".ds-wall{width:520px;height:160px;border-radius:8px;background:radial-gradient(circle at 18% 8%,rgba(59,130,246,.18),transparent 26rem),linear-gradient(rgba(96,165,250,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.045) 1px,transparent 1px),#08111f;background-size:100% 100%,44px 44px,44px 44px,100% 100%;display:flex;align-items:center;padding:24px}.ds-wall-prompt{font-family:'Geist Mono',ui-monospace,Menlo,Consolas,monospace;font-size:14px;color:#94a3b8}.ds-wall-prompt b{color:#3b82f6}.ds-wall-prompt i{font-style:normal;color:#e5eefb}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Operator's Desktop",
+    "overview": "The portfolio is a security engineer's workstation, seen late at night. The page is the desktop: a deep navy wallpaper drawn like a blueprint, with a faint 44px grid and two soft glows. Content lives in things you'd find on that desktop: OS windows with title bars and controls, cards set down on the grid, a shell prompt (`>_ cat cv.html`), and mouse pointers that move with intent. Every surface says \"this person works here\", without turning into a hacker cliché.\n\nThe system is **quiet at rest and alive on touch**. Surfaces are calm, dark, and low-contrast until the visitor does something: hovering lights an edge in Terminal Blue, the info window can be grabbed and dragged, a pointer double-clicks a section icon and the section opens like an app. Density is moderate. The content is proof (credentials, rankings, experience, live projects), so it must stay readable and fast to scan. Personality sits in the frames, cursors, and transitions, never on top of the evidence.\n\nMotion is part of the identity but is rationed. The intro, the section launches, and the occasional pointer burst are short, one-shot, and always disabled under `prefers-reduced-motion`. The design must never feel over-animated: if motion delays reading the proof, it is wrong.",
+    "keyCharacteristics": [
+      "Dark, atmospheric night palette on a blueprint grid; one blue accent for actions, one cyan accent for signals.",
+      "OS-window framing: title bars, minimize/maximize/close controls, draggable windows.",
+      "Terminal touches in monospace, used as accents, not as a theme.",
+      "Custom gradient cursors (arrow and hand) shared by the real cursor and every animated pointer.",
+      "Calm at rest, responsive on hover, drag, and click; rationed one-shot motion.",
+      "Bilingual by construction: Geist for English, Thmanyah Sans for Arabic, logical (start/end) layout for RTL."
+    ],
+    "rules": [
+      {
+        "name": "The Two Lights Rule",
+        "body": "Terminal Blue means \"you can act on this\"; Signal Cyan means \"this is live or notable\". Never swap them, and never introduce a third accent for UI chrome.",
+        "section": "colors"
+      },
+      {
+        "name": "The Blueprint Rule",
+        "body": "Backgrounds are never flat black or pure gray. The wallpaper is always the navy gradient with the 44px grid and the two soft glows (blue top-left, cyan top-right).",
+        "section": "colors"
+      },
+      {
+        "name": "The Pointer Palette Exception",
+        "body": "The decorative visitor pointers may use their own gradient pairs (cyan/blue, pink/violet, amber/orange, emerald/teal, violet/indigo, rose). These colors belong to the pointers only and never leak into UI components.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shell Accent Rule",
+        "body": "Monospace marks something as a command or a handle (`>_ cat cv.html`, `root`, `recruiter`). It is never used for body text, headings, or proof.",
+        "section": "typography"
+      },
+      {
+        "name": "The Equal Scripts Rule",
+        "body": "Every typographic decision must hold in Arabic. Code snippets, handles, and window controls stay `dir=\"ltr\"` inside RTL pages.",
+        "section": "typography"
+      },
+      {
+        "name": "The Stacking Rule",
+        "body": "The shadow grows with how far above the desktop something sits: cards < windows < menus and dialogs. Never give a card a menu-level shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** frame important content as desktop objects: windows with title bars, cards on the grid, icon tiles that open sections.",
+      "**Do** keep surfaces calm at rest and make them respond on hover, drag, and click (Terminal Blue edges, lifts, presses).",
+      "**Do** use Terminal Blue for actions and Signal Cyan for signals, per the Two Lights Rule.",
+      "**Do** keep every motion short and one-shot, and switch it off under `prefers-reduced-motion`.",
+      "**Do** use logical properties (start/end, ms/me, ps/pe) so every layout mirrors correctly in Arabic.",
+      "**Do** use the shared desktop cursor shapes for any new pointer, cursor, or click effect."
+    ],
+    "donts": [
+      "**Don't** over-animate. No looping motion near the proof, no animation that blocks reading, no new effect that repeats more often than the existing pointer bursts.",
+      "**Don't** use flat black, pure gray, or light backgrounds; the wallpaper is always the Midnight Blueprint gradient and grid.",
+      "**Don't** introduce a third UI accent color or reuse the pointer palette in components.",
+      "**Don't** use monospace for body text, headings, or proof content.",
+      "**Don't** hard-code white surfaces or dark text on buttons; every control uses the theme tokens."
+    ]
+  }
+}
