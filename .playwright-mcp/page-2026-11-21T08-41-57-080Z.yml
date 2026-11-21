@@ -1,0 +1,354 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - combobox "Jump to section" [ref=e8]:
+          - generic: Abdullah bin Ammar
+        - combobox [aria-hidden] [ref=e11]
+      - link "AR" [ref=e12]:
+        - /url: /ar
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [aria-hidden] [ref=e18]: ">_"
+          - code [ref=e19]: cat cv.html
+        - generic [ref=e20]: Security-Focused Software Engineer
+        - heading "Abdullah bin Ammar" [level=1] [ref=e22]
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: Security-focused software engineer, full-stack developer, and vulnerability researcher based in Riyadh. Experienced in building practical web systems, testing real attack surfaces, and hardening the infrastructure behind them.
+          - generic [ref=e26]:
+            - link "View projects" [ref=e27]:
+              - /url: "#projects"
+            - link "Contact" [ref=e28]:
+              - /url: mailto:moq3e2000@gmail.com
+      - generic [ref=e31]:
+        - heading "Info" [level=2] [ref=e36]
+        - generic [ref=e48]:
+          - link "moq3e2000@gmail.com" [ref=e49]:
+            - /url: mailto:moq3e2000@gmail.com
+          - link "+966 50 748 5316" [ref=e54]:
+            - /url: tel:+966507485316
+          - link "a222ghoul.com" [ref=e58]:
+            - /url: https://a222ghoul.com
+          - link "linkedin.com/in/a222web" [ref=e63]:
+            - /url: https://linkedin.com/in/a222web
+          - link "github.com/A222moq3e" [ref=e67]:
+            - /url: https://github.com/A222moq3e
+          - link "cyberhub.sa/profile/a222_a222" [ref=e71]:
+            - /url: https://cyberhub.sa/profile/a222_a222
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - button "Experience" [ref=e79]
+        - generic [ref=e84]:
+          - paragraph [ref=e85]: Experience
+          - heading "Experience" [level=2] [ref=e86]
+      - list [ref=e88]:
+        - listitem [ref=e89]:
+          - generic [ref=e98]:
+            - generic [ref=e99]: SITE
+            - generic [ref=e102]:
+              - heading "Software Engineer" [level=3] [ref=e103]
+              - generic [ref=e104]: 2026 - Present
+            - list [ref=e108]:
+              - listitem [ref=e109]: Designed and developed a cybersecurity exercise and assessment platform to deliver cyber exercises, simulations, and assessments.
+              - listitem [ref=e110]: Built features for exercise management, participant engagement, assessment workflows, and performance tracking.
+              - listitem [ref=e111]: Collaborated with stakeholders to translate cybersecurity training and evaluation requirements into scalable platform capabilities.
+              - listitem [ref=e112]: Contributed to platform architecture, backend services, security controls, and deployment processes.
+            - generic [ref=e113]:
+              - generic [ref=e114]: Cybersecurity
+              - generic [ref=e116]: Platform Architecture
+              - generic [ref=e118]: Training
+              - generic [ref=e120]: Exercises
+              - generic [ref=e122]: Full Stack Development
+              - generic [ref=e124]: DevOps
+              - generic [ref=e126]: AI
+        - listitem [ref=e128]:
+          - generic [ref=e137]:
+            - generic [ref=e138]: Moqraraty | Riyadh (Remote/Hybrid)
+            - generic [ref=e141]:
+              - heading "Backend Developer & Security Tester" [level=3] [ref=e142]
+              - generic [ref=e143]: 2024 - Present
+            - list [ref=e147]:
+              - listitem [ref=e148]: Built and maintained backend services with validation, authorization, and secure data-flow practices.
+              - listitem [ref=e149]: Performed targeted web/API penetration testing and identified misconfigurations and input validation gaps.
+              - listitem [ref=e150]: Improved deployment reliability and hardening across Docker, Nginx, logs, and metrics.
+              - listitem [ref=e151]: Supported a growing education platform serving more than 30,000 users.
+            - generic [ref=e152]:
+              - generic [ref=e153]: Docker
+              - generic [ref=e155]: Nginx
+              - generic [ref=e157]: API Security
+              - generic [ref=e159]: Penetration Testing
+              - generic [ref=e161]: Express.js
+              - generic [ref=e163]: PostgreSQL
+              - generic [ref=e165]: SQLite
+        - listitem [ref=e167]:
+          - generic [ref=e176]:
+            - generic [ref=e177]: Bugbounty.sa
+            - generic [ref=e180]:
+              - heading "Security Researcher" [level=3] [ref=e181]
+              - generic [ref=e182]: 2024 - 2025
+            - list [ref=e186]:
+              - listitem [ref=e187]: Researches and reports web security vulnerabilities through responsible disclosure workflows.
+              - listitem [ref=e188]: Applies practical testing methodology across common web and API attack surfaces.
+            - generic [ref=e189]:
+              - generic [ref=e190]: Web Security
+              - generic [ref=e192]: API Security
+              - generic [ref=e194]: Responsible Disclosure
+        - listitem [ref=e196]:
+          - generic [ref=e205]:
+            - generic [ref=e206]: Information Security Club (infosecclub) | University Community
+            - generic [ref=e209]:
+              - heading "Volunteer Security Researcher" [level=3] [ref=e210]
+              - generic [ref=e211]: 2024 - 2026
+            - list [ref=e215]:
+              - listitem [ref=e216]: Conducted vulnerability research, knowledge sharing, and CTF challenge development.
+              - listitem [ref=e217]: Participated with CCISinfosecclub in research writing and building web CTF challenges.
+            - generic [ref=e218]:
+              - generic [ref=e219]: Vulnerability Research
+              - generic [ref=e221]: CTF
+              - generic [ref=e223]: Research Writing
+        - listitem [ref=e225]:
+          - generic [ref=e234]:
+            - generic [ref=e235]: Qubes\Neyam | Riyadh (Remote/Hybrid)
+            - generic [ref=e238]:
+              - heading "Software Engineer Specialist" [level=3] [ref=e239]
+              - generic [ref=e240]: 2024 - 2025
+            - list [ref=e244]:
+              - listitem [ref=e245]: Contributed to the development of the Neyam Salla Theme and the Shopify theme for e-commerce.
+              - listitem [ref=e246]: Collaborated on the Neyam Data Warehouse initiative.
+            - generic [ref=e247]:
+              - generic [ref=e248]: Salla
+              - generic [ref=e250]: Shopify
+              - generic [ref=e252]: Data Warehouse
+        - listitem [ref=e254]:
+          - generic [ref=e263]:
+            - generic [ref=e264]: Ejad Club | University
+            - generic [ref=e267]:
+              - heading "Volunteer Full-Stack Developer" [level=3] [ref=e268]
+              - generic [ref=e269]: 2024 - 2025
+            - list [ref=e273]:
+              - listitem [ref=e274]: Helped build Ejad Sh3bh, a class and group management website, as a full-stack contributor.
+            - generic [ref=e275]:
+              - generic [ref=e276]: Full-Stack Development
+              - generic [ref=e278]: Web Development
+    - generic [ref=e288]:
+      - generic [ref=e291]:
+        - generic [ref=e292]:
+          - button "Credentials" [ref=e293]
+          - generic [ref=e297]:
+            - paragraph [ref=e298]: Credentials
+            - heading "Credentials" [level=2] [ref=e299]
+        - generic [ref=e300]:
+          - generic [ref=e304]:
+            - generic [ref=e305]: eJPT
+            - paragraph [ref=e306]: INE / eLearnSecurity
+            - generic [ref=e307]: eLearnSecurity Junior Penetration Tester with entry-level red team skills and real-world style labs.
+            - link "Verify credential" [ref=e308]:
+              - /url: https://certs.ine.com/578a0663-0b3a-4f8d-9afa-b1d34329de2c
+          - generic [ref=e312]:
+            - generic [ref=e313]: eWPT
+            - paragraph [ref=e314]: INE / eLearnSecurity
+            - generic [ref=e315]: eLearnSecurity Web Application Penetration Tester focused on web vulnerabilities and methodology.
+            - link "Verify credential" [ref=e316]:
+              - /url: https://my.ine.com/certificate/be3f3e16-8ef2-412d-9295-77d02558604e
+          - generic [ref=e320]:
+            - generic [ref=e321]: eCPPT
+            - paragraph [ref=e322]: INE / eLearnSecurity
+            - generic [ref=e323]: eLearnSecurity Certified Professional Penetration Tester covering network, web, AD, and reporting.
+            - link "Verify credential" [ref=e324]:
+              - /url: https://certs.ine.com/128e9d38-0810-4604-b8ad-affb03b063b5
+      - generic [ref=e327]:
+        - generic [ref=e328]:
+          - button "Achievements" [ref=e329]
+          - generic [ref=e333]:
+            - paragraph [ref=e334]: Achievements
+            - heading "Achievements" [level=2] [ref=e335]
+        - generic [ref=e336]:
+          - generic [ref=e340]:
+            - generic [ref=e342]:
+              - generic [ref=e343]: Top 10
+              - img [ref=e346]:
+                - generic [ref=e347]: Top
+                - generic [ref=e349]: "0"
+            - generic [ref=e352]: CyberHub university ranking
+          - generic [ref=e356]:
+            - generic [ref=e358]:
+              - generic [ref=e359]: Top 300
+              - img [ref=e362]:
+                - generic [ref=e363]: Top
+                - generic [ref=e365]: "0"
+            - generic [ref=e368]: FlagYard global ranking
+          - generic [ref=e372]:
+            - generic [ref=e374]:
+              - generic [ref=e375]: Top 100
+              - img [ref=e378]:
+                - generic [ref=e379]: Top
+                - generic [ref=e381]: "0"
+            - generic [ref=e384]: BlackHat MEA CTF 2024 global event team
+          - generic [ref=e388]:
+            - generic [ref=e390]:
+              - generic [ref=e391]: Top 2%
+              - img [ref=e394]:
+                - generic [ref=e395]: Top
+                - generic [ref=e397]: "0"
+                - generic [ref=e400]: "%"
+            - generic [ref=e402]: TryHackMe global ranking
+    - generic [ref=e406]:
+      - generic [ref=e407]:
+        - button "Projects" [ref=e408]
+        - generic [ref=e412]:
+          - paragraph [ref=e413]: Projects
+          - heading "Projects" [level=2] [ref=e414]
+      - generic [ref=e415]:
+        - generic [ref=e416]:
+          - generic [ref=e417]:
+            - generic [ref=e420]:
+              - generic [ref=e421]:
+                - generic [ref=e422]:
+                  - img "Moqraraty logo" [ref=e424]
+                  - generic [ref=e425]: moqraraty.com
+                - generic [ref=e426]: Moqraraty
+                - generic [ref=e427]: App that supports and simplifies the student journey
+              - generic [ref=e428]:
+                - link "Open site" [ref=e429]:
+                  - /url: https://moqraraty.com/
+                - button "Preview" [ref=e430]
+            - button "Reorder card. Drag or use arrow keys." [ref=e431]
+          - generic [ref=e439]:
+            - generic [ref=e442]:
+              - generic [ref=e443]:
+                - generic [ref=e444]:
+                  - img "Ejad Sh3bh logo" [ref=e446]
+                  - generic [ref=e447]: ejad.sh3bh.com
+                - generic [ref=e448]: Ejad Sh3bh
+                - generic [ref=e449]: Class and group management platform for Ejad Club
+              - generic [ref=e450]:
+                - link "Open site" [ref=e451]:
+                  - /url: https://ejad.sh3bh.com/
+                - button "Preview" [ref=e452]
+            - button "Reorder card. Drag or use arrow keys." [ref=e453]
+          - generic [ref=e461]:
+            - generic [ref=e464]:
+              - generic [ref=e465]:
+                - generic [ref=e466]:
+                  - img "Sh3bh logo" [ref=e468]
+                  - generic [ref=e469]: sh3bh.com
+                - generic [ref=e470]: Sh3bh
+                - generic [ref=e471]: Class and group management platform
+              - generic [ref=e472]:
+                - link "Open site" [ref=e473]:
+                  - /url: https://sh3bh.com/
+                - button "Preview" [ref=e474]
+            - button "Reorder card. Drag or use arrow keys." [ref=e475]
+          - generic [ref=e483]:
+            - generic [ref=e487]:
+              - generic [ref=e488]:
+                - img "Neyam logo" [ref=e490]
+                - generic [ref=e491]: Neyam Website
+              - generic [ref=e492]: Neyam
+              - generic [ref=e493]: Salla Theme Shopping Website for Neyam products
+            - button "Reorder card. Drag or use arrow keys." [ref=e495]
+          - generic [ref=e503]:
+            - generic [ref=e506]:
+              - generic [ref=e507]:
+                - generic [ref=e508]:
+                  - img "Edualizer logo" [ref=e510]
+                  - generic [ref=e511]: edualizer.video
+                - generic [ref=e512]: Edualizer
+                - generic [ref=e513]: Platform to create videos using code with AI
+              - generic [ref=e514]:
+                - link "Open site" [ref=e515]:
+                  - /url: https://edualizer.video/
+                - button "Preview" [ref=e516]
+            - button "Reorder card. Drag or use arrow keys." [ref=e517]
+          - generic [ref=e525]:
+            - generic [ref=e528]:
+              - generic [ref=e529]:
+                - generic [ref=e530]:
+                  - img "STEMREF logo" [ref=e532]
+                  - generic [ref=e533]: stemref.askardesign.com
+                - generic [ref=e534]: STEMREF
+                - generic [ref=e535]: Educational platform for university students
+              - generic [ref=e536]:
+                - link "Website" [ref=e537]:
+                  - /url: https://stemref.askardesign.com/
+                - link "GitHub" [ref=e538]:
+                  - /url: https://github.com/A222moq3e/STEMREF
+                - button "Preview" [ref=e539]
+            - button "Reorder card. Drag or use arrow keys." [ref=e540]
+          - generic [ref=e548]:
+            - generic [ref=e551]:
+              - generic [ref=e552]:
+                - generic [ref=e553]:
+                  - img "Lagpsy logo" [ref=e555]
+                  - generic [ref=e556]: lagpsy.vercel.app
+                - generic [ref=e557]: Lagpsy
+                - generic [ref=e558]: Mental health and gaming awareness initiative
+              - generic [ref=e559]:
+                - link "Website" [ref=e560]:
+                  - /url: https://lagpsy.vercel.app/
+                - link "GitHub" [ref=e561]:
+                  - /url: https://github.com/A222moq3e/LAG_Website
+                - button "Preview" [ref=e562]
+            - button "Reorder card. Drag or use arrow keys." [ref=e563]
+        - link "See more" [ref=e572]:
+          - /url: https://github.com/A222moq3e
+    - generic [ref=e576]:
+      - generic [ref=e577]:
+        - button "Skills" [ref=e578]
+        - generic [ref=e581]:
+          - paragraph [ref=e582]: Skills
+          - heading "Skills" [level=2] [ref=e583]
+      - generic [ref=e584]:
+        - generic [ref=e588]:
+          - generic [ref=e589]: Web/App Security
+          - generic [ref=e590]: XSS, SQLi, CSRF, CORS, SSRF, XXE, SSTI, API security testing, HTTP Smuggling, Race Condition, OWASP
+        - generic [ref=e594]:
+          - generic [ref=e595]: Pentest Tooling
+          - generic [ref=e596]: Nmap, Gobuster, SQLMap, Burp Suite, ffuf, Caido
+        - generic [ref=e600]:
+          - generic [ref=e601]: Platforms & OS
+          - generic [ref=e602]: Linux, Nginx, Docker, Docker Compose
+        - generic [ref=e606]:
+          - generic [ref=e607]: Programming
+          - generic [ref=e608]: HTML, CSS, JavaScript/TypeScript, Python, React, Next.js, Node.js, Express.js, FastAPI
+        - generic [ref=e612]:
+          - generic [ref=e613]: Databases
+          - generic [ref=e614]: PostgreSQL, SQL, SQLite, MongoDB
+        - generic [ref=e618]:
+          - generic [ref=e619]: Version Control & CI/CD
+          - generic [ref=e620]: Git, GitHub, GitLab, branching workflows, pull requests, merge requests, GitHub Actions, build and deployment pipelines
+        - generic [ref=e624]:
+          - generic [ref=e625]: MarTech/Tech
+          - generic [ref=e626]: Liquid, Braze, Twilight
+        - generic [ref=e630]:
+          - generic [ref=e631]: Soft Skills
+          - generic [ref=e632]: Teamwork, collaboration, positive attitude, strong communication
+    - generic [ref=e636]:
+      - generic [ref=e637]:
+        - button "Education & Languages" [ref=e638]
+        - generic [ref=e642]:
+          - paragraph [ref=e643]: Education & Languages
+          - heading "Education & Languages" [level=2] [ref=e644]
+      - generic [ref=e645]:
+        - generic [ref=e648]:
+          - generic [ref=e649]: Education
+          - generic [ref=e656]:
+            - strong [ref=e658]: Imam Mohammad Ibn Saud Islamic University (Imamu)
+            - paragraph [ref=e659]: "GPA: 4.82 / 5"
+        - generic [ref=e662]:
+          - generic [ref=e663]: Languages
+          - generic [ref=e670]:
+            - generic [ref=e672]:
+              - strong [ref=e673]: Arabic
+              - generic [ref=e674]: Native
+            - generic [ref=e676]:
+              - strong [ref=e677]: English
+              - generic [ref=e678]: Professional working proficiency
+    - generic [ref=e680]:
+      - generic [ref=e681]: A222 © 2026
+      - generic [ref=e682]:
+        - link [ref=e683]:
+          - /url: https://github.com/A222moq3e
+        - link [ref=e686]:
+          - /url: mailto:moq3e2000@gmail.com

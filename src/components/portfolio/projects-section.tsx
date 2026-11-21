@@ -1,6 +1,7 @@
 /**
  * Renders portfolio project cards and project actions.
  */
+import { SortableCards } from "@/components/portfolio/sortable-cards";
 import { Globe } from "lucide-react";
 
 import { AppLaunch, AppLaunchContent, AppLaunchItem } from "@/components/portfolio/app-launch";
@@ -48,7 +49,7 @@ export function ProjectsSection({ dictionary }) {
       <AppLaunch className="mx-auto w-full max-w-6xl">
         <SectionHeading eyebrow={dictionary.sections.projects} title={dictionary.sections.projects} icon={Globe} />
         <AppLaunchContent>
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <SortableCards className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <AppLaunchItem key={project.id} index={index}>
               <Card
@@ -79,7 +80,7 @@ export function ProjectsSection({ dictionary }) {
               </Card>
             </AppLaunchItem>
           ))}
-        </div>
+        </SortableCards>
         <ScrollReveal className="mt-6 flex justify-center" direction="up">
           <Button asChild variant="outline" className="bg-card hover:border-primary">
             <a href="https://github.com/A222moq3e" target="_blank" rel="noreferrer">

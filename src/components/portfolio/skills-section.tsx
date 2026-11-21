@@ -1,3 +1,4 @@
+import { SortableCards } from "@/components/portfolio/sortable-cards";
 /**
  * Renders grouped technical and soft skills.
  */
@@ -12,7 +13,7 @@ export function SkillsSection({ dictionary }) {
     <section id="skills" className="scroll-mt-20 px-4 py-10" data-nav-id="skills">
       <AppLaunch className="mx-auto w-full max-w-6xl">
         <SectionHeading eyebrow={dictionary.sections.skills} title={dictionary.sections.skills} icon={Wrench} />
-        <AppLaunchContent className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <AppLaunchContent><SortableCards className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {dictionary.skills.map(([title, details], index) => (
             <AppLaunchItem key={title} index={index}>
               <Card className="h-full">
@@ -23,7 +24,7 @@ export function SkillsSection({ dictionary }) {
               </Card>
             </AppLaunchItem>
           ))}
-        </AppLaunchContent>
+        </SortableCards></AppLaunchContent>
       </AppLaunch>
     </section>
   );

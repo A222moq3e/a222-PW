@@ -19,7 +19,7 @@ export const experience: Dictionary["experience"] = [
   },
   {
     title: "مطور Backend ومختبر أمني",
-    company: "مقرراتي | الرياض (عن بعد/هجين)",
+    company: "مقرراتي | الرياض",
     logo: "/imgs/moqraraty/Moqraraty_logo.png",
     period: "2024 - الآن",
     technologies: ["Docker", "Nginx", "أمن API", "اختبار الاختراق", "Express.js", "PostgreSQL", "SQLite"],
@@ -54,7 +54,7 @@ export const experience: Dictionary["experience"] = [
   },
   {
     title: "أخصائي هندسة برمجيات",
-    company: "Qubes\\Neyam | الرياض (عن بعد/هجين)",
+    company: "Qubes\\Neyam | الرياض",
     logo: "/imgs/neyam/Neyam_logo.webp",
     period: "2024 - 2025",
     technologies: ["سلة", "Shopify", "مستودعات البيانات"],

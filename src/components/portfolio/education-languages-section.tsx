@@ -1,3 +1,4 @@
+import { SortableCards } from "@/components/portfolio/sortable-cards";
 /**
  * Renders education history and language proficiency.
  */
@@ -21,7 +22,7 @@ export function EducationLanguagesSection({ dictionary }) {
           title={dictionary.sections.educationLanguages}
           icon={GraduationCap}
         />
-        <AppLaunchContent className="grid gap-6 lg:grid-cols-2">
+        <AppLaunchContent><SortableCards className="grid gap-6 lg:grid-cols-2">
           <AppLaunchItem>
             <Card className="h-full">
               <CardHeader>
@@ -66,7 +67,7 @@ export function EducationLanguagesSection({ dictionary }) {
               </CardContent>
             </Card>
           </AppLaunchItem>
-        </AppLaunchContent>
+        </SortableCards></AppLaunchContent>
       </AppLaunch>
     </section>
   );

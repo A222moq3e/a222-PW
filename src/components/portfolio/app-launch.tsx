@@ -4,7 +4,6 @@
  * Opens a section like a desktop app: a cursor double-clicks the section icon, then the content launches.
  */
 import { cubicBezier, motion, useAnimate, useInView, useReducedMotion } from "motion/react";
-import { HandGrab } from "lucide-react";
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 
 import { CURSOR_HOTSPOTS, DesktopCursor } from "@/components/ui/desktop-cursor";
@@ -224,19 +223,28 @@ export function AppLaunchItem({ children, index = 0, className }: { children: Re
   const [scope, animate] = useAnimate();
   const visible = useInView(scope, { once: true, amount: 0.2 });
   const [grabbing, setGrabbing] = useState(false);
+  const palettes = [["#22d3ee", "#3b82f6"], ["#f472b6", "#a78bfa"], ["#34d399", "#14b8a6"], ["#fbbf24", "#f97316"]];
+  const [from, to] = palettes[index % palettes.length];
 
   useEffect(() => {
     if (!launched || !visible || reduced) return;
     let cancelled = false;
     const card = scope.current.querySelector("[data-item-card]");
     const cursor = scope.current.querySelector("[data-item-cursor]");
-    const side = getComputedStyle(scope.current).direction === "rtl" ? -1 : 1;
-    const offset = Math.min(180, window.innerWidth * 0.22) * side;
     const run = async () => {
-      // The card is absent until the cursor picks it up at its entry position.
-      animate(card, { opacity: 0, x: offset, y: 64 }, { duration: 0 });
-      animate(cursor, { x: offset + 32 * side, y: 96, opacity: 0 }, { duration: 0 });
-      await animate(cursor, { opacity: 1, x: offset, y: 64 }, { delay: 0.45 + index * 0.45, duration: 0.35, ease });
+      // Use the rendered position so desktop columns and RTL layouts enter
+      // from their physical screen edge, with the entire card offscreen.
+      const bounds = scope.current.getBoundingClientRect();
+      const viewportWidth = document.documentElement.clientWidth;
+      const center = bounds.left + bounds.width / 2;
+      const fromLeft = Math.abs(center - viewportWidth / 2) < 2
+        ? index % 2 === 0
+        : center < viewportWidth / 2;
+      const side = fromLeft ? -1 : 1;
+      const offset = fromLeft ? -bounds.right - 32 : viewportWidth - bounds.left + 32;
+      animate(card, { opacity: 0, x: offset, y: 0 }, { duration: 0 });
+      animate(cursor, { x: offset, y: 0, opacity: 0 }, { duration: 0 });
+      await animate(cursor, { opacity: 1 }, { delay: 0.45 + index * 0.45, duration: 0.18 });
       if (cancelled) return;
       setGrabbing(true);
       await Promise.all([
@@ -262,8 +270,8 @@ export function AppLaunchItem({ children, index = 0, className }: { children: Re
       <div data-item-card className="relative h-full rounded-xl" style={{ opacity: reduced ? 1 : 0 }}>{children}</div>
       {!reduced && <span data-item-cursor aria-hidden="true" className="pointer-events-none absolute left-[42%] top-4 z-30" style={{ opacity: 0, marginLeft: -TIP_X, marginTop: -TIP_Y, transformOrigin: `${TIP_X}px ${TIP_Y}px` }}>
         {grabbing
-          ? <HandGrab className="size-7 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" style={{ transform: HAND_SHIFT }} />
-          : <DesktopCursor variant="hand" style={{ transform: HAND_SHIFT }} />}
+          ? <DesktopCursor variant="grab" from={from} to={to} style={{ transform: HAND_SHIFT }} />
+          : <DesktopCursor variant="hand" from={from} to={to} style={{ transform: HAND_SHIFT }} />}
       </span>}
     </div>
   );

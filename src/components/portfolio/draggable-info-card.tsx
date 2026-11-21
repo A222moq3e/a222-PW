@@ -4,7 +4,8 @@
  * Draggable contact info card, introduced by a cursor that drags it into place.
  */
 import { motion, useAnimate, useDragControls, useReducedMotion } from "motion/react";
-import { Globe, Hand, HandGrab, Mail, Phone, ShieldCheck } from "lucide-react";
+import { Globe, Mail, Phone, ShieldCheck } from "lucide-react";
+import { DesktopCursor } from "@/components/ui/desktop-cursor";
 import { useEffect, useState } from "react";
 
 import { GithubIcon } from "@/components/icons/github-icon";
@@ -107,9 +108,9 @@ export function DraggableInfoCard({ dictionary, delay = 0 }) {
             style={{ opacity: 0 }}
           >
             {isGrabbing ? (
-              <HandGrab className="size-7 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
+              <DesktopCursor variant="grab" />
             ) : (
-              <Hand className="size-7 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
+              <DesktopCursor variant="hand" />
             )}
           </span>
         )}

@@ -154,6 +154,17 @@ iframe {
   color-scheme: light;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .sortable-card :where(*):not(:where(a, a *, button, button *, input, textarea, select, [contenteditable="true"])) {
+    cursor: inherit;
+  }
+
+  html[data-card-dragging="true"],
+  html[data-card-dragging="true"] * {
+    cursor: var(--card-drag-cursor) !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

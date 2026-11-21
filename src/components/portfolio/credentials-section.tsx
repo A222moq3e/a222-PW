@@ -1,3 +1,4 @@
+import { SortableCards } from "@/components/portfolio/sortable-cards";
 /**
  * Renders certifications and achievement highlights.
  */
@@ -23,7 +24,7 @@ export function CredentialsSection({ dictionary }) {
             title={dictionary.sections.credentials}
             icon={Award}
           />
-          <AppLaunchContent className="grid gap-4">
+          <AppLaunchContent><SortableCards className="grid gap-4">
             {dictionary.certifications.map((certification, index) => (
               <AppLaunchItem key={certification.title} index={index}>
                 <Card>
@@ -40,7 +41,7 @@ export function CredentialsSection({ dictionary }) {
                 </Card>
               </AppLaunchItem>
             ))}
-          </AppLaunchContent>
+          </SortableCards></AppLaunchContent>
         </AppLaunch>
 
         <AppLaunch>
@@ -49,7 +50,7 @@ export function CredentialsSection({ dictionary }) {
             title={dictionary.sections.achievements}
             icon={Sparkles}
           />
-          <AppLaunchContent className="grid grid-cols-2 gap-4">
+          <AppLaunchContent><SortableCards className="grid grid-cols-2 gap-4">
             {dictionary.achievements.map(([value, label], index) => (
               <AppLaunchItem key={label} index={index}>
                 <Card>
@@ -62,7 +63,7 @@ export function CredentialsSection({ dictionary }) {
                 </Card>
               </AppLaunchItem>
             ))}
-          </AppLaunchContent>
+          </SortableCards></AppLaunchContent>
         </AppLaunch>
       </div>
     </section>

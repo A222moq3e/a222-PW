@@ -19,7 +19,7 @@ export const experience: Dictionary["experience"] = [
   },
   {
     title: "Backend Developer & Security Tester",
-    company: "Moqraraty | Riyadh (Remote/Hybrid)",
+    company: "Moqraraty | Riyadh",
     logo: "/imgs/moqraraty/Moqraraty_logo.png",
     period: "2024 - Present",
     technologies: ["Docker", "Nginx", "API Security", "Penetration Testing", "Express.js", "PostgreSQL", "SQLite"],
@@ -54,7 +54,7 @@ export const experience: Dictionary["experience"] = [
   },
   {
     title: "Software Engineer Specialist",
-    company: "Qubes\\Neyam | Riyadh (Remote/Hybrid)",
+    company: "Qubes\\Neyam | Riyadh",
     logo: "/imgs/neyam/Neyam_logo.webp",
     period: "2024 - 2025",
     technologies: ["Salla", "Shopify", "Data Warehouse"],
