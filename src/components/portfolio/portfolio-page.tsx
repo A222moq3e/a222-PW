@@ -1,3 +1,4 @@
+import { BootProvider, BootReveal } from "@/components/portfolio/boot-sequence";
 /**
  * Composes all portfolio sections into the localized page.
  */
@@ -16,10 +17,12 @@ import { SkillsSection } from "@/components/portfolio/skills-section";
 export function PortfolioPage({ dictionary, locale }) {
   return (
     <main className="relative isolate min-h-screen overflow-x-clip">
-      <CursorSpark />
-      <div className="relative z-10">
-        <SiteHeader dictionary={dictionary} locale={locale} />
+      <BootProvider>
+      <BootReveal><CursorSpark /></BootReveal>
+      <div className="relative">
+        <BootReveal><SiteHeader dictionary={dictionary} locale={locale} /></BootReveal>
         <HeroSection dictionary={dictionary} />
+        <BootReveal>
         <ExperienceSection dictionary={dictionary} />
         <CredentialsSection dictionary={dictionary} />
         <ProjectsSection dictionary={dictionary} />
@@ -28,7 +31,9 @@ export function PortfolioPage({ dictionary, locale }) {
         <SiteFooter />
         <ScrollHint label={dictionary.hero.scrollHint} />
         <PeekCursors />
+        </BootReveal>
       </div>
+      </BootProvider>
     </main>
   );
 }

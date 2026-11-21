@@ -1,10 +1,10 @@
 /**
  * Renders the hero introduction and contact information card.
  */
+import { BootSequence, BootReveal } from "@/components/portfolio/boot-sequence";
 import { AnimatedName } from "@/components/portfolio/animated-name";
 import { DraggableInfoCard } from "@/components/portfolio/draggable-info-card";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection({ dictionary }) {
@@ -14,16 +14,13 @@ export function HeroSection({ dictionary }) {
     <section id="hero" className="scroll-mt-20 px-4 py-16 md:py-24" data-nav-id="hero">
       <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[1.4fr_0.6fr]">
         <div className="flex flex-col justify-center">
-          <ScrollReveal direction="up">
-          <div dir="ltr" className="mb-3 flex w-fit items-center gap-2 font-mono text-sm">
-            <span aria-hidden="true" className="font-semibold text-primary">{">_"}</span>
-            <code className="text-muted-foreground">cat <span className="text-foreground">cv.html</span></code>
-          </div>
-          </ScrollReveal>
+          <BootSequence />
+          <BootReveal>
           <ScrollReveal direction="up" delay={400}>
-          <Badge variant="outline" className="mb-4 w-fit bg-card">
-            {dictionary.hero.eyebrow}
-          </Badge>
+          <div className="mb-4 inline-flex max-w-full overflow-hidden rounded-[3px] border border-border font-mono text-[11px] leading-5 shadow-sm">
+            <span dir="ltr" className="flex shrink-0 items-center bg-muted px-2 text-secondary">|</span>
+            <span className="bg-primary/15 px-2 text-center text-foreground">{dictionary.hero.eyebrow}</span>
+          </div>
           </ScrollReveal>
           <AnimatedName name={dictionary.hero.name} delay={nameDelay} />
           <ScrollReveal direction="up" delay={detailsDelay}>
@@ -42,9 +39,10 @@ export function HeroSection({ dictionary }) {
             </Button>
           </div>
           </ScrollReveal>
+          </BootReveal>
         </div>
 
-        <DraggableInfoCard dictionary={dictionary} delay={detailsDelay + 150} />
+        <BootReveal><DraggableInfoCard dictionary={dictionary} delay={detailsDelay + 150} /></BootReveal>
       </div>
     </section>
   );
