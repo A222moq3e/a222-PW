@@ -10,6 +10,9 @@ import { CURSOR_HOTSPOTS, DesktopCursor } from "@/components/ui/desktop-cursor";
 import { cn } from "@/lib/utils";
 
 const LaunchContext = createContext(true);
+export function useAppLaunched() {
+  return useContext(LaunchContext);
+}
 const ease = [0.22, 1, 0.36, 1] as const;
 const easeFn = cubicBezier(...ease);
 const APPROACH_DELAY = 0.35;

@@ -3,6 +3,7 @@
  */
 import { Award, Sparkles } from "lucide-react";
 
+import { AchievementNumber } from "@/components/portfolio/achievement-number";
 import { AppLaunch, AppLaunchContent } from "@/components/portfolio/app-launch";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { SectionHeading } from "@/components/portfolio/section-heading";
@@ -54,7 +55,9 @@ export function CredentialsSection({ dictionary }) {
               <ScrollReveal key={label} delay={index * 70} direction="scale">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-3xl text-secondary">{value}</CardTitle>
+                    <CardTitle className="text-3xl text-secondary">
+                      <AchievementNumber value={value} />
+                    </CardTitle>
                     <CardDescription>{label}</CardDescription>
                   </CardHeader>
                 </Card>
