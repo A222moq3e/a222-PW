@@ -4,8 +4,7 @@
 import { Award, Sparkles } from "lucide-react";
 
 import { AchievementNumber } from "@/components/portfolio/achievement-number";
-import { AppLaunch, AppLaunchContent } from "@/components/portfolio/app-launch";
-import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
+import { AppLaunch, AppLaunchContent, AppLaunchItem } from "@/components/portfolio/app-launch";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -26,7 +25,7 @@ export function CredentialsSection({ dictionary }) {
           />
           <AppLaunchContent className="grid gap-4">
             {dictionary.certifications.map((certification, index) => (
-              <ScrollReveal key={certification.title} delay={index * 80} direction="left">
+              <AppLaunchItem key={certification.title} index={index}>
                 <Card>
                   <CardHeader>
                     <CardTitle>{certification.title}</CardTitle>
@@ -39,7 +38,7 @@ export function CredentialsSection({ dictionary }) {
                     </Button>
                   </CardHeader>
                 </Card>
-              </ScrollReveal>
+              </AppLaunchItem>
             ))}
           </AppLaunchContent>
         </AppLaunch>
@@ -52,7 +51,7 @@ export function CredentialsSection({ dictionary }) {
           />
           <AppLaunchContent className="grid grid-cols-2 gap-4">
             {dictionary.achievements.map(([value, label], index) => (
-              <ScrollReveal key={label} delay={index * 70} direction="scale">
+              <AppLaunchItem key={label} index={index}>
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-3xl text-secondary">
@@ -61,7 +60,7 @@ export function CredentialsSection({ dictionary }) {
                     <CardDescription>{label}</CardDescription>
                   </CardHeader>
                 </Card>
-              </ScrollReveal>
+              </AppLaunchItem>
             ))}
           </AppLaunchContent>
         </AppLaunch>

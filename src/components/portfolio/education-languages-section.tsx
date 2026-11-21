@@ -3,8 +3,7 @@
  */
 import { GraduationCap, Languages } from "lucide-react";
 
-import { AppLaunch, AppLaunchContent } from "@/components/portfolio/app-launch";
-import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
+import { AppLaunch, AppLaunchContent, AppLaunchItem } from "@/components/portfolio/app-launch";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -23,7 +22,7 @@ export function EducationLanguagesSection({ dictionary }) {
           icon={GraduationCap}
         />
         <AppLaunchContent className="grid gap-6 lg:grid-cols-2">
-          <ScrollReveal direction="left">
+          <AppLaunchItem>
             <Card className="h-full">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -44,9 +43,9 @@ export function EducationLanguagesSection({ dictionary }) {
                 ))}
               </CardContent>
             </Card>
-          </ScrollReveal>
+          </AppLaunchItem>
 
-          <ScrollReveal direction="right" delay={120}>
+          <AppLaunchItem index={1}>
             <Card className="h-full">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -66,7 +65,7 @@ export function EducationLanguagesSection({ dictionary }) {
                 ))}
               </CardContent>
             </Card>
-          </ScrollReveal>
+          </AppLaunchItem>
         </AppLaunchContent>
       </AppLaunch>
     </section>

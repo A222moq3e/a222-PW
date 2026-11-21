@@ -3,8 +3,7 @@
  */
 import { Wrench } from "lucide-react";
 
-import { AppLaunch, AppLaunchContent } from "@/components/portfolio/app-launch";
-import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
+import { AppLaunch, AppLaunchContent, AppLaunchItem } from "@/components/portfolio/app-launch";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -15,14 +14,14 @@ export function SkillsSection({ dictionary }) {
         <SectionHeading eyebrow={dictionary.sections.skills} title={dictionary.sections.skills} icon={Wrench} />
         <AppLaunchContent className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {dictionary.skills.map(([title, details], index) => (
-            <ScrollReveal key={title} delay={index * 45} direction="up">
+            <AppLaunchItem key={title} index={index}>
               <Card className="h-full">
                 <CardHeader>
                   <CardTitle>{title}</CardTitle>
                   <CardDescription>{details}</CardDescription>
                 </CardHeader>
               </Card>
-            </ScrollReveal>
+            </AppLaunchItem>
           ))}
         </AppLaunchContent>
       </AppLaunch>

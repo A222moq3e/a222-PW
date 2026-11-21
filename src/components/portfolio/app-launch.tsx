@@ -4,7 +4,8 @@
  * Opens a section like a desktop app: a cursor double-clicks the section icon, then the content launches.
  */
 import { cubicBezier, motion, useAnimate, useInView, useReducedMotion } from "motion/react";
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { HandGrab } from "lucide-react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 
 import { CURSOR_HOTSPOTS, DesktopCursor } from "@/components/ui/desktop-cursor";
 import { cn } from "@/lib/utils";
@@ -24,6 +25,29 @@ const HAND_SHIFT = `translate(${TIP_X - CURSOR_HOTSPOTS.hand.x}px, ${TIP_Y - CUR
 const RIPPLE_SIZE = 32;
 
 export function AppLaunch({ children, className }: { children: ReactNode; className?: string }) {
+  const host = useRef<HTMLDivElement>(null);
+  const [revision, setRevision] = useState(0);
+
+  useEffect(() => {
+    const replay = (event: Event) => {
+      if (host.current?.closest("[data-nav-id]")?.getAttribute("data-nav-id") === (event as CustomEvent<string>).detail) {
+        setRevision((current) => current + 1);
+      }
+    };
+    window.addEventListener("portfolio:launch-section", replay);
+    return () => window.removeEventListener("portfolio:launch-section", replay);
+  }, []);
+
+  return (
+    <div ref={host} className={className} onClick={(event) => {
+      if ((event.target as HTMLElement).closest("[data-launch-icon]")) setRevision((current) => current + 1);
+    }}>
+      <AppLaunchAnimation key={revision}>{children}</AppLaunchAnimation>
+    </div>
+  );
+}
+
+function AppLaunchAnimation({ children }: { children: ReactNode }) {
   const shouldReduceMotion = useReducedMotion();
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: true, margin: "0px 0px -20% 0px" });
@@ -43,7 +67,8 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
     const icon = root.querySelector("[data-launch-icon]");
     const cursor = root.querySelector("[data-launch-cursor]");
     const ripple = root.querySelector("[data-launch-ripple]");
-    if (!icon || !cursor || !ripple) {
+    const container = root.querySelector("[data-launch-container]");
+    if (!icon || !cursor || !ripple || !container) {
       setLaunched(true);
       return;
     }
@@ -125,7 +150,7 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
       if (cancelled) return;
       setLaunched(true);
       animate(icon, { scale: 1, boxShadow: "0 0 0 0px rgba(59, 130, 246, 0)" }, { duration: 0.4 });
-      await animate(cursor, { opacity: 0, x: targetX + 16 * side, y: targetY + 20 }, { delay: 0.15, duration: 0.35 });
+      await animate(cursor, { opacity: 0, x: targetX + 16 * side, y: targetY + 20 }, { duration: 0.35 });
       if (!cancelled) setCursorDone(true);
     };
 
@@ -138,8 +163,10 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
 
   return (
     <LaunchContext.Provider value={launched}>
-      <div ref={scope} className={cn("relative", className)}>
-        {children}
+      <div ref={scope} className="relative">
+        <div data-launch-container className="relative rounded-xl" style={{ transformOrigin: "42% 16px" }}>
+          {children}
+        </div>
         {!cursorDone && (
           <>
             <span
@@ -169,15 +196,68 @@ export function AppLaunch({ children, className }: { children: ReactNode; classN
 
 export function AppLaunchContent({ children, className }: { children: ReactNode; className?: string }) {
   const launched = useContext(LaunchContext);
+  const reduceMotion = useReducedMotion();
 
   return (
     <motion.div
-      className={cn("origin-top-left rtl:origin-top-right", className)}
+      className={cn(className)}
       initial={false}
-      animate={launched ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.9, y: -12 }}
-      transition={{ duration: 0.45, ease }}
+      animate={{ opacity: launched ? 1 : 0 }}
+      transition={{ duration: reduceMotion ? 0 : 0.35, ease }}
     >
       {children}
     </motion.div>
+  );
+}
+
+/** Each card has its own grab point, cursor, and placement animation. */
+export function AppLaunchItem({ children, index = 0, className }: { children: ReactNode; index?: number; className?: string }) {
+  const launched = useAppLaunched();
+  const reduced = useReducedMotion();
+  const [scope, animate] = useAnimate();
+  const visible = useInView(scope, { once: true, amount: 0.2 });
+  const [grabbing, setGrabbing] = useState(false);
+
+  useEffect(() => {
+    if (!launched || !visible || reduced) return;
+    let cancelled = false;
+    const card = scope.current.querySelector("[data-item-card]");
+    const cursor = scope.current.querySelector("[data-item-cursor]");
+    const side = getComputedStyle(scope.current).direction === "rtl" ? -1 : 1;
+    const offset = Math.min(180, window.innerWidth * 0.22) * side;
+    const run = async () => {
+      // The card is absent until the cursor picks it up at its entry position.
+      animate(card, { opacity: 0, x: offset, y: 64 }, { duration: 0 });
+      animate(cursor, { x: offset + 32 * side, y: 96, opacity: 0 }, { duration: 0 });
+      await animate(cursor, { opacity: 1, x: offset, y: 64 }, { delay: 0.45 + index * 0.45, duration: 0.35, ease });
+      if (cancelled) return;
+      setGrabbing(true);
+      await Promise.all([
+        animate(card, { opacity: 1, boxShadow: "0 24px 48px -12px rgba(0,0,0,0.45)" }, { duration: 0.18 }),
+        animate(cursor, { scale: 0.88 }, { duration: 0.18 }),
+      ]);
+      if (cancelled) return;
+      await Promise.all([
+        animate(card, { x: 0, y: 0 }, { duration: 1.05, ease }),
+        animate(cursor, { x: 0, y: 0 }, { duration: 1.05, ease }),
+      ]);
+      if (cancelled) return;
+      setGrabbing(false);
+      animate(card, { boxShadow: "0 0 0 0 rgba(0,0,0,0)" }, { duration: 0.3 });
+      await animate(cursor, { opacity: 0, x: 16 * side, y: 18, scale: 1 }, { duration: 0.3 });
+    };
+    run();
+    return () => { cancelled = true; };
+  }, [animate, index, launched, reduced, scope, visible]);
+
+  return (
+    <div ref={scope} className={cn("relative min-w-0", className)}>
+      <div data-item-card className="relative h-full rounded-xl" style={{ opacity: reduced ? 1 : 0 }}>{children}</div>
+      {!reduced && <span data-item-cursor aria-hidden="true" className="pointer-events-none absolute left-[42%] top-4 z-30" style={{ opacity: 0, marginLeft: -TIP_X, marginTop: -TIP_Y, transformOrigin: `${TIP_X}px ${TIP_Y}px` }}>
+        {grabbing
+          ? <HandGrab className="size-7 fill-white text-slate-900 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" style={{ transform: HAND_SHIFT }} />
+          : <DesktopCursor variant="hand" style={{ transform: HAND_SHIFT }} />}
+      </span>}
+    </div>
   );
 }

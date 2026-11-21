@@ -2,7 +2,6 @@ import { BriefcaseBusiness, Building2, Calendar, type LucideIcon } from "lucide-
 
 import { Badge } from "@/components/ui/badge";
 import { TimelineEnd, TimelineIcon, TimelineLine } from "@/components/ui/timeline-decoration";
-import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { cn } from "@/lib/utils";
 
 export type TimelineExperience = {
@@ -32,7 +31,7 @@ export default function Timeline({
             <TimelineIcon delay={index * 70}>
               <Icon aria-hidden="true" className="h-5 w-5" />
             </TimelineIcon>
-            <ScrollReveal className="relative ps-10" direction="up" delay={index * 70}>
+            <div className="relative ps-10">
             <div className="space-y-3">
               <div className="flex items-center gap-2.5">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent">
@@ -63,7 +62,7 @@ export default function Timeline({
                 </div>
               )}
             </div>
-            </ScrollReveal>
+            </div>
           </li>
         ))}
       </ol>

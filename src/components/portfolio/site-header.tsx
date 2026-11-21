@@ -93,6 +93,7 @@ export function SiteHeader({ dictionary, locale }) {
 
   const handleSectionChange = (sectionId: string) => {
     setActiveSectionId(sectionId);
+    window.dispatchEvent(new CustomEvent("portfolio:launch-section", { detail: sectionId }));
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: "smooth",
       block: "start",

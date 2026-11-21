@@ -3,7 +3,7 @@
  */
 import { Globe } from "lucide-react";
 
-import { AppLaunch, AppLaunchContent } from "@/components/portfolio/app-launch";
+import { AppLaunch, AppLaunchContent, AppLaunchItem } from "@/components/portfolio/app-launch";
 import { GithubIcon } from "@/components/icons/github-icon";
 import { ProjectPreviewDialog } from "@/components/portfolio/project-preview-dialog";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
@@ -50,7 +50,7 @@ export function ProjectsSection({ dictionary }) {
         <AppLaunchContent>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
-            <ScrollReveal key={project.id} delay={index * 70} direction="scale">
+            <AppLaunchItem key={project.id} index={index}>
               <Card
                 className={cn("h-full transition hover:-translate-y-1 hover:border-primary", project.secondary && "opacity-90")}
               >
@@ -77,7 +77,7 @@ export function ProjectsSection({ dictionary }) {
                   )}
                 </CardContent>
               </Card>
-            </ScrollReveal>
+            </AppLaunchItem>
           ))}
         </div>
         <ScrollReveal className="mt-6 flex justify-center" direction="up">
